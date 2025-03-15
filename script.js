@@ -75,6 +75,7 @@ function startTraining() {
 function deleteAsana(i) {
   console.log("i", i);
   asanas.splice(i, 1);
+  count -= 1;
   murkup();
   // console.log(asanas);
 }
