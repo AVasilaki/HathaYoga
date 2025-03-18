@@ -33,13 +33,14 @@ function handleSubmit(evt) {
   numberOfAsanas += 1;
 
   added.style = "display:block";
+  practiceTime.style = "display:block";
 
   const timeOneAsana = timeAsana + asanaRest;
   totalTime += timeOneAsana;
-  practiceTime.textContent = ` total time ${totalTime}`;
-  const totalPracticeTime = `<p class='totalTime'>total time ${totalTime}</p> `;
+  // practiceTime.textContent = ` total time ${totalTime}`;
+  // const totalPracticeTime = `<p class='totalTime'>total practice time ${totalTime}</p> `;
 
-  murkup(totalPracticeTime);
+  murkup();
 }
 
 function deleteAsana(i) {
@@ -50,22 +51,23 @@ function deleteAsana(i) {
   totalTimeAsana = timeofAsana + restTime;
 
   totalTime -= totalTimeAsana;
-  const totalPracticeTime = `<p class='totalTime'>total time ${totalTime}</p> `;
+  // const totalPracticeTime = `<p class='totalTime'>total practice time ${totalTime}</p> `;
 
   const n = asanas.findIndex((el) => el.index === i);
 
   asanas.splice(n, 1);
 
   numberOfAsanas -= 1;
-  murkup(totalPracticeTime);
+  murkup();
 }
 
-function murkup(totalPracticeTime) {
+function murkup() {
   added.innerHTML = "";
   if (!asanas.length) {
     added.style = "display:none";
+    practiceTime.style = "display:none";
   }
-  const m = asanas
+  const murkup = asanas
     .map((el) => {
       const i = el.index;
       return `<div class='addAasanaContainer'>
@@ -76,7 +78,8 @@ function murkup(totalPracticeTime) {
     })
     .join("");
   // console.log(m);
-  const murkup = totalPracticeTime + m;
+  practiceTime.textContent = ` total practice time: ${totalTime} minute`;
+
   added.insertAdjacentHTML("beforeend", murkup);
 }
 

@@ -10,11 +10,38 @@
     <section class="list-asanas">
       <h1>Hatha Yoga</h1>
       <h2>All asanas</h2>
-      <h3 class="js-time totalTime">total</h3>
+      <h3 class="js-time totalTime"></h3>
       <div class="added"></div>
       <button onclick="startTraining()">start</button>
       <audio id="myAudio" src="./start.mp3"></audio>
       <ol class="js-asanas" id="exerciseList">
+        <li>
+          <form name="" id="paschimottanasana">
+            <fieldset>
+              <legend>Description</legend>
+              <h3>Старт</h3>
+              <p>
+                Перед началом практики сядь прямо, успокой свой разум и пожелай счастья всем живым существам во
+                Вселенной. Затем, подумай о всех учителях йоги и попроси у них защиты и помощи в овладении йогой.
+                Подумай о запредельном Абсолюте. После чего приступай к практике.
+              </p>
+              <img src="./images/start.png" alt="" />
+            </fieldset>
+            <fieldset>
+              <legend>asana performens time</legend>
+              <label for="">
+                time asana
+                <input type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label for="">
+                break
+                <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button type="submit">add to practice</button>
+              <!-- <button type="button" name="delete">delete</button> -->
+            </fieldset>
+          </form>
+        </li>
         <li>
           <form name="" id="paschimottanasana">
             <fieldset>
