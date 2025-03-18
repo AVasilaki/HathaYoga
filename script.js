@@ -5,6 +5,7 @@ let numberOfAsanas = 0;
 const list = document.querySelector("ol");
 const body = document.querySelector("body");
 const added = document.querySelector(".added");
+const practiceTime = document.querySelector(".js-time");
 
 list.addEventListener("submit", handleSubmit);
 
@@ -28,14 +29,15 @@ function handleSubmit(evt) {
   };
 
   asanas.push(obj);
+
   numberOfAsanas += 1;
 
   added.style = "display:block";
 
   const timeOneAsana = timeAsana + asanaRest;
   totalTime += timeOneAsana;
-
-  const totalPracticeTime = `<p>total time ${totalTime}</p> `;
+  practiceTime.textContent = ` total time ${totalTime}`;
+  const totalPracticeTime = `<p class='totalTime'>total time ${totalTime}</p> `;
 
   murkup(totalPracticeTime);
 }
@@ -48,7 +50,7 @@ function deleteAsana(i) {
   totalTimeAsana = timeofAsana + restTime;
 
   totalTime -= totalTimeAsana;
-  const totalPracticeTime = `<p>total time ${totalTime}</p> `;
+  const totalPracticeTime = `<p class='totalTime'>total time ${totalTime}</p> `;
 
   const n = asanas.findIndex((el) => el.index === i);
 
@@ -66,13 +68,15 @@ function murkup(totalPracticeTime) {
   const m = asanas
     .map((el) => {
       const i = el.index;
-      return `<div class='addeAasanaContainer'>
+      return `<div class='addAasanaContainer'>
       <h3> ${el.asanaName}</h3>
+      <img src='${el.asanaImg}' width=70/> 
       <button type='button' id='${i}'  onclick='deleteAsana(${i})'>del</button> 
       </div>`;
     })
     .join("");
-  const murkup = m + totalPracticeTime;
+  // console.log(m);
+  const murkup = totalPracticeTime + m;
   added.insertAdjacentHTML("beforeend", murkup);
 }
 
