@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="modal">
+      <button type="button" class="modalBtn" onclick="closeModal()">close</button>
+    </div>
+    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link</a>
     <section class="list-asanas">
       <h1>Hatha Yoga</h1>
       <h2>All asanas</h2>
-      <h3 class="js-time totalTime"></h3>
+      <div class="js-time">
+        <h3 class="totalTime"></h3>
+      </div>
+
       <div class="added"></div>
-      <button onclick="startTraining()">start</button>
+      <!-- <div class="js-start">
+        <h3 class="totalTime"></h3>
+      </div> -->
+      <button class="js-start" onclick="startTraining()">start</button>
       <audio id="myAudio" src="./start.mp3"></audio>
       <ol class="js-asanas" id="exerciseList">
         <li>
@@ -100,7 +110,7 @@
             </fieldset>
           </form>
         </li>
-        <li>
+        <!-- <li>
           <form>
             <h3>Поза кобры – бхуджангасана</h3>
             <p name="">
@@ -123,7 +133,7 @@
             </label>
             <button type="submit">add to practice</button>
           </form>
-        </li>
+        </li> -->
         <li>
           <h3>Поза – символ йогина, отказавшегося от заблуждения</h3>
           <p>

@@ -6,6 +6,9 @@ const list = document.querySelector("ol");
 const body = document.querySelector("body");
 const added = document.querySelector(".added");
 const practiceTime = document.querySelector(".js-time");
+const start = document.querySelector(".js-start");
+const modal = document.querySelector(".modal");
+// console.log(modal);
 
 list.addEventListener("submit", handleSubmit);
 
@@ -84,5 +87,10 @@ function murkup() {
 }
 
 function startTraining() {
-  document.getElementById("myAudio").play();
+  // document.getElementById("myAudio").play();
+  modal.style = "display:block";
+  added.style = "display:none";
+}
+function closeModal() {
+  modal.style = "display:none";
 }
