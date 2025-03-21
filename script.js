@@ -9,6 +9,7 @@ const practiceTime = document.querySelector(".js-time");
 const start = document.querySelector(".js-start");
 const modal = document.querySelector(".modal");
 const modalTitle = document.querySelector(".js-modalTitle");
+const modalImg = document.querySelector(".js-modalImg");
 console.log(modalTitle);
 
 list.addEventListener("submit", handleSubmit);
@@ -34,6 +35,7 @@ function handleSubmit(evt) {
   const rest = {
     asanaName: "rest",
     asanaRest,
+    asanaImg: "./images/Sriyantra.svg",
     timeAsana: asanaRest,
   };
   asanas.push(objAsana);
@@ -100,7 +102,9 @@ function startTraining() {
   if (index < asanas.length) {
     timer = asanas[index].timeAsana;
     title = asanas[index].asanaName;
+    img = asanas[index].asanaImg;
     modalTitle.textContent = `${title}`;
+    modalImg.src = img;
     console.log(timer);
     setTimeout(() => {
       console.log(asanas[index]);
