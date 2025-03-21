@@ -8,7 +8,8 @@ const added = document.querySelector(".added");
 const practiceTime = document.querySelector(".js-time");
 const start = document.querySelector(".js-start");
 const modal = document.querySelector(".modal");
-// console.log(modal);
+const modalTitle = document.querySelector(".js-modalTitle");
+console.log(modalTitle);
 
 list.addEventListener("submit", handleSubmit);
 
@@ -22,7 +23,7 @@ function handleSubmit(evt) {
   const asanaRest = Number(elements.timeBreake.value);
   const id = form.id;
 
-  const obj = {
+  const objAsana = {
     id,
     index: Date.now(),
     asanaName,
@@ -30,8 +31,13 @@ function handleSubmit(evt) {
     timeAsana,
     asanaRest,
   };
-
-  asanas.push(obj);
+  const rest = {
+    asanaName: "rest",
+    asanaRest,
+    timeAsana: asanaRest,
+  };
+  asanas.push(objAsana);
+  asanas.push(rest);
 
   numberOfAsanas += 1;
 
@@ -85,12 +91,34 @@ function murkup() {
 
   added.insertAdjacentHTML("beforeend", murkup);
 }
-
+let index = 0;
 function startTraining() {
   // document.getElementById("myAudio").play();
   modal.style = "display:block";
   added.style = "display:none";
+  practiceTime.style = "display:none";
+  if (index < asanas.length) {
+    timer = asanas[index].timeAsana;
+    title = asanas[index].asanaName;
+    modalTitle.textContent = `${title}`;
+    console.log(timer);
+    setTimeout(() => {
+      console.log(asanas[index]);
+      innerHTML = "";
+      index += 1;
+      startTraining();
+    }, timer * 10000);
+  } else {
+    asanas = [];
+  }
+  // asanas.map((el) => {
+  //   c(el);
+  //   // console.log(el);
+  // });
 }
 function closeModal() {
   modal.style = "display:none";
+}
+function c(el) {
+  setTimeout(console.log("el", el), 40000);
 }
