@@ -100,9 +100,10 @@ function startTraining() {
   added.style = "display:none";
   practiceTime.style = "display:none";
   if (index < asanas.length) {
-    timer = asanas[index].timeAsana;
-    title = asanas[index].asanaName;
-    img = asanas[index].asanaImg;
+    const timer = asanas[index].timeAsana;
+    const timeMilisekund = timer * 60000;
+    const title = asanas[index].asanaName;
+    const img = asanas[index].asanaImg;
     modalTitle.textContent = `${title}`;
     modalImg.src = img;
     console.log(timer);
@@ -111,10 +112,14 @@ function startTraining() {
       innerHTML = "";
       index += 1;
       startTraining();
-    }, timer * 10000);
+    }, timeMilisekund);
   } else {
     asanas = [];
   }
+  // for (let index = 0; index < asanas.length; index++) {
+  //   const element = asanas[index];
+  //   setTimeout(console.log(element), 10000);
+  // }
   // asanas.map((el) => {
   //   c(el);
   //   // console.log(el);
@@ -122,6 +127,7 @@ function startTraining() {
 }
 function closeModal() {
   modal.style = "display:none";
+  asanas = [];
 }
 function c(el) {
   setTimeout(console.log("el", el), 40000);
