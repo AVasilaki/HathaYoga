@@ -1,4 +1,5 @@
 let asanas = [];
+console.log("asanas", asanas);
 let totalTime = 0;
 let numberOfAsanas = 0;
 
@@ -10,7 +11,8 @@ const start = document.querySelector(".js-start");
 const modal = document.querySelector(".modal");
 const modalTitle = document.querySelector(".js-modalTitle");
 const modalImg = document.querySelector(".js-modalImg");
-console.log(modalTitle);
+const progressBar = document.getElementById("progressBar");
+// console.log(modalTitle);
 
 list.addEventListener("submit", handleSubmit);
 
@@ -94,6 +96,8 @@ function murkup() {
   added.insertAdjacentHTML("beforeend", murkup);
 }
 let index = 0;
+let timerBack = null;
+
 function startTraining() {
   // document.getElementById("myAudio").play();
   modal.style = "display:block";
@@ -102,20 +106,42 @@ function startTraining() {
   if (index < asanas.length) {
     const timer = asanas[index].timeAsana;
     const timeMilisekund = timer * 60000;
+    let timeSekund = timeMilisekund / 1000;
     const title = asanas[index].asanaName;
     const img = asanas[index].asanaImg;
     modalTitle.textContent = `${title}`;
     modalImg.src = img;
-    console.log(timer);
+    speak("Наступна вправа: " + title); // Озвучення вправи
+
+    // console.log(timer);
+    timerBack = setInterval(() => {
+      if (timeSekund >= 0) {
+        let progress = (timeSekund / (timer * 60)) * 100;
+        console.log(progress);
+        progressBar.style.width = progress + "%";
+        timeSekund -= 1;
+      }
+    }, 1000);
+    // function handleTimer(m) {
+    //   const t = m - 1000;
+    //   console.log(t);
+    //   return t;
+    // }
     setTimeout(() => {
-      console.log(asanas[index]);
+      // console.log(asanas[index]);
       innerHTML = "";
       index += 1;
       startTraining();
     }, timeMilisekund);
-  } else {
-    asanas = [];
   }
+  if (index === asanas.length) {
+    asanas = [];
+    index = 0;
+    modal.style = "display:none";
+  }
+  // else {
+  //   asanas = [];
+  // }
   // for (let index = 0; index < asanas.length; index++) {
   //   const element = asanas[index];
   //   setTimeout(console.log(element), 10000);
@@ -127,8 +153,15 @@ function startTraining() {
 }
 function closeModal() {
   modal.style = "display:none";
+  clearInterval(timerBack);
+  // modal.innerHTML = "";
   asanas = [];
 }
-function c(el) {
-  setTimeout(console.log("el", el), 40000);
+// function c(el) {
+//   setTimeout(console.log("el", el), 40000);
+// }
+function speak(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "uk-UA";
+  speechSynthesis.speak(utterance);
 }
