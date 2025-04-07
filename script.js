@@ -1,7 +1,12 @@
 let asanas = [];
-console.log("asanas", asanas);
+// console.log("asanas", asanas);
 let totalTime = 0;
 let numberOfAsanas = 0;
+let timer;
+let title;
+let img;
+let audio;
+let timerId;
 
 const list = document.querySelector("ol");
 const body = document.querySelector("body");
@@ -12,14 +17,18 @@ const modal = document.querySelector(".modal");
 const modalTitle = document.querySelector(".js-modalTitle");
 const modalImg = document.querySelector(".js-modalImg");
 const progressBar = document.getElementById("progressBar");
+const restAudio = document.getElementById("myAudio");
 // console.log(modalTitle);
 
 list.addEventListener("submit", handleSubmit);
 
 function handleSubmit(evt) {
   evt.preventDefault();
+  // asanas = [];
+
   const form = evt.target;
   const elements = form.elements;
+  const audio = form.children[0];
   const asanaName = elements[0].children[1].textContent;
   const asanaImg = elements[0].children[3].src;
   const timeAsana = Number(elements.time.value);
@@ -32,14 +41,16 @@ function handleSubmit(evt) {
     asanaName,
     asanaImg,
     timeAsana,
-    asanaRest,
+    audio,
   };
+  console.log(objAsana);
   const rest = {
     asanaName: "rest",
-    asanaRest,
     asanaImg: "./images/Sriyantra.svg",
     timeAsana: asanaRest,
+    audio: restAudio,
   };
+
   asanas.push(objAsana);
   asanas.push(rest);
 
@@ -47,6 +58,7 @@ function handleSubmit(evt) {
 
   added.style = "display:block";
   practiceTime.style = "display:block";
+  start.style = "display:block";
 
   const timeOneAsana = timeAsana + asanaRest;
   totalTime += timeOneAsana;
@@ -101,19 +113,24 @@ let timerBack = null;
 function startTraining() {
   // document.getElementById("myAudio").play();
   modal.style = "display:block";
+  start.style = "display;none";
   added.style = "display:none";
   practiceTime.style = "display:none";
+  const closeBtn = document.querySelector(".modalBtn");
+  // console.log(closeBtn);
+
   if (index < asanas.length) {
-    const timer = asanas[index].timeAsana;
-    const timeMilisekund = timer * 60000;
+    // speak("Наступна вправа: " + title); // Озвучення вправи
+    timer = asanas[index].timeAsana;
+    let timeMilisekund = timer * 60000;
     let timeSekund = timeMilisekund / 1000;
-    const title = asanas[index].asanaName;
-    const img = asanas[index].asanaImg;
+    title = asanas[index].asanaName;
+    img = asanas[index].asanaImg;
+    audio = asanas[index].audio;
     modalTitle.textContent = `${title}`;
     modalImg.src = img;
-    speak("Наступна вправа: " + title); // Озвучення вправи
-
-    // console.log(timer);
+    audio.play();
+    console.log(timer, title, img);
     timerBack = setInterval(() => {
       if (timeSekund >= 0) {
         let progress = (timeSekund / (timer * 60)) * 100;
@@ -122,44 +139,45 @@ function startTraining() {
         timeSekund -= 1;
       }
     }, 1000);
-    // function handleTimer(m) {
-    //   const t = m - 1000;
-    //   console.log(t);
-    //   return t;
-    // }
-    setTimeout(() => {
+
+    timerId = setTimeout(() => {
       // console.log(asanas[index]);
       innerHTML = "";
       index += 1;
       startTraining();
     }, timeMilisekund);
   }
+  closeBtn.addEventListener("click", closeModal);
+  function closeModal() {
+    modal.style = "display:none";
+    start.style = "display:none";
+    clearInterval(timerBack);
+    clearTimeout(timerId);
+    timer = null;
+    img = "";
+    title = "";
+    audio.pause();
+    // modal.innerHTML = "";
+    asanas = [];
+    startTraining();
+  }
   if (index === asanas.length) {
     asanas = [];
     index = 0;
     modal.style = "display:none";
   }
-  // else {
-  //   asanas = [];
-  // }
-  // for (let index = 0; index < asanas.length; index++) {
-  //   const element = asanas[index];
-  //   setTimeout(console.log(element), 10000);
-  // }
-  // asanas.map((el) => {
-  //   c(el);
-  //   // console.log(el);
-  // });
 }
-function closeModal() {
-  modal.style = "display:none";
-  clearInterval(timerBack);
-  // modal.innerHTML = "";
-  asanas = [];
-}
-// function c(el) {
-//   setTimeout(console.log("el", el), 40000);
+// function closeModal() {
+//   modal.style = "display:none";
+//   start.style = "display:none";
+//   clearInterval(timerBack);
+//   timer = null;
+//   img = "";
+//   title = "";
+//   // modal.innerHTML = "";
+//   asanas = [];
 // }
+
 function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "uk-UA";
