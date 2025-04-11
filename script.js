@@ -1,27 +1,40 @@
 let asanas = [];
 // console.log("asanas", asanas);
+// total practice time загальний час практики з перервами
 let totalTime = 0;
+// кількість доданих вправ
 let numberOfAsanas = 0;
 let timer;
 let title;
 let img;
 let audio;
 let timerId;
+const body = document.querySelector("body");
 
 const list = document.querySelector("ol");
-const body = document.querySelector("body");
+// спливаюче вікно для відображення доданих вправ
 const added = document.querySelector(".added");
-const practiceTime = document.querySelector(".js-time");
-const start = document.querySelector(".js-start");
-const modal = document.querySelector(".modal");
-const modalTitle = document.querySelector(".js-modalTitle");
-const modalImg = document.querySelector(".js-modalImg");
+// заголовок який відобраає час практики
+const totalPracticeTimeTitle = document.querySelector(".js-time");
+// кнопка початок практики
+const startBtn = document.querySelector(".js-start");
+// вікно з асанами під час практики
+const modalWindow = document.querySelector(".modal");
+//назва поточної асани підчас практики
+const currentAsanaName = document.querySelector(".js-modalTitle");
+// зображення поточної асани
+const currentAsanaImg = document.querySelector(".js-modalImg");
+// progress bar
 const progressBar = document.getElementById("progressBar");
-const restAudio = document.getElementById("myAudio");
-// console.log(modalTitle);
+// а зараз відпочиваємо
+const startRestVoice = document.getElementById("myAudio");
+//пікалка за десять секунд до завершення
+const rest10cekBeep = document.querySelector("#rest10cek");
+// console.log(rest10cek);
 
 list.addEventListener("submit", handleSubmit);
 
+// функція додавання вибраних асан у масив і відображення на сторінці
 function handleSubmit(evt) {
   evt.preventDefault();
   // asanas = [];
@@ -48,7 +61,7 @@ function handleSubmit(evt) {
     asanaName: "rest",
     asanaImg: "./images/Sriyantra.svg",
     timeAsana: asanaRest,
-    audio: restAudio,
+    audio: startRestVoice,
   };
 
   asanas.push(objAsana);
@@ -57,8 +70,8 @@ function handleSubmit(evt) {
   numberOfAsanas += 1;
 
   added.style = "display:block";
-  practiceTime.style = "display:block";
-  start.style = "display:block";
+  totalPracticeTimeTitle.style = "display:block";
+  startBtn.style = "display:block";
 
   const timeOneAsana = timeAsana + asanaRest;
   totalTime += timeOneAsana;
@@ -72,10 +85,12 @@ function deleteAsana(i) {
   const deletingAsana = asanas.find((el) => el.index === i);
 
   const timeofAsana = deletingAsana.timeAsana;
-  const restTime = deletingAsana.asanaRest;
-  totalTimeAsana = timeofAsana + restTime;
+  // console.log(timeofAsana);
+  // const restTime = deletingAsana.asanaRest;
+  // console.log(restTime);
+  // totalTimeAsana = timeofAsana + restTime;
 
-  totalTime -= totalTimeAsana;
+  totalTime -= timeofAsana;
   // const totalPracticeTime = `<p class='totalTime'>total practice time ${totalTime}</p> `;
 
   const n = asanas.findIndex((el) => el.index === i);
@@ -90,7 +105,7 @@ function murkup() {
   added.innerHTML = "";
   if (!asanas.length) {
     added.style = "display:none";
-    practiceTime.style = "display:none";
+    totalPracticeTimeTitle.style = "display:none";
   }
   const murkup = asanas
     .map((el) => {
@@ -103,7 +118,7 @@ function murkup() {
     })
     .join("");
   // console.log(m);
-  practiceTime.textContent = ` total practice time: ${totalTime} minute`;
+  totalPracticeTimeTitle.textContent = ` total practice time: ${totalTime} minute`;
 
   added.insertAdjacentHTML("beforeend", murkup);
 }
@@ -112,10 +127,10 @@ let timerBack = null;
 
 function startTraining() {
   // document.getElementById("myAudio").play();
-  modal.style = "display:block";
-  start.style = "display;none";
+  modalWindow.style = "display:block";
+  startBtn.style = "display;none";
   added.style = "display:none";
-  practiceTime.style = "display:none";
+  totalPracticeTimeTitle.style = "display:none";
   const closeBtn = document.querySelector(".modalBtn");
   // console.log(closeBtn);
 
@@ -127,8 +142,8 @@ function startTraining() {
     title = asanas[index].asanaName;
     img = asanas[index].asanaImg;
     audio = asanas[index].audio;
-    modalTitle.textContent = `${title}`;
-    modalImg.src = img;
+    currentAsanaName.textContent = `${title}`;
+    currentAsanaImg.src = img;
     audio.play();
     console.log(timer, title, img);
     timerBack = setInterval(() => {
@@ -137,6 +152,9 @@ function startTraining() {
         console.log(progress);
         progressBar.style.width = progress + "%";
         timeSekund -= 1;
+        if (timeSekund === 10) {
+          rest10cekBeep.play();
+        }
       }
     }, 1000);
 
@@ -149,8 +167,8 @@ function startTraining() {
   }
   closeBtn.addEventListener("click", closeModal);
   function closeModal() {
-    modal.style = "display:none";
-    start.style = "display:none";
+    modalWindow.style = "display:none";
+    startBtn.style = "display:none";
     clearInterval(timerBack);
     clearTimeout(timerId);
     timer = null;
@@ -164,7 +182,7 @@ function startTraining() {
   if (index === asanas.length) {
     asanas = [];
     index = 0;
-    modal.style = "display:none";
+    modalWindow.style = "display:none";
   }
 }
 // function closeModal() {

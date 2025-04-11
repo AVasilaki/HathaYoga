@@ -6,55 +6,71 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
+    <!-- link youtoub video -->
+    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link</a>
+
+    <!-- модалка для практики -->
     <div class="modal">
       <h3 class="js-modalTitle"></h3>
       <img class="js-modalImg" src="" alt="" width="300" />
       <button type="button" class="modalBtn" onclick="closeModal()">close</button>
+
+      <!-- progress bar -->
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
     </div>
-    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link</a>
+
+    <!-- section asana list -->
     <section class="list-asanas">
-      <h1>Hatha Yoga</h1>
-      <h2>All asanas</h2>
+      <h1 class="main-title">Hatha Yoga</h1>
+      <h2 class="subtitle">All asanas</h2>
 
-      <div class="js-time">
-        <h3 class="totalTime"></h3>
+      <!-- total time plus start btn wrapper -->
+      <div class="total-time-start">
+        <!-- total time -->
+        <h3 class="js-time">
+          <!-- <h3 class="totalTime"></h3> -->
+        </h3>
+        <!-- btn start -->
+        <button class="js-start" onclick="startTraining()">start</button>
       </div>
-      <button class="js-start" onclick="startTraining()">start</button>
-      <div class="added"></div>
-      <!-- <div class="js-start">
-        <h3 class="totalTime"></h3>
-      </div> -->
 
+      <!-- спливаюче вікно для відображення доданих вправ -->
+      <div class="added"></div>
+
+      <!-- пікалка за десять секунд до завершення -->
+      <audio id="rest10cek" src="./audio/end.mp3"></audio>
+      <!-- а зараз відпочиваємо -->
       <audio id="myAudio" src="./audio/rest.mp3"></audio>
+
       <ol class="js-asanas" id="exerciseList">
         <li>
           <form name="" id="start">
             <audio id="" name="startAudio" src="./audio/enter.mp3"></audio>
-            <fieldset>
+            <fieldset class="fieldDescription">
               <legend>Description</legend>
-              <h3>Старт</h3>
-              <p>
+              <h3 class="title-desc">Старт</h3>
+              <p class="asana-desc">
                 Перед началом практики сядь прямо, успокой свой разум и пожелай счастья всем живым существам во
                 Вселенной. Затем, подумай о всех учителях йоги и попроси у них защиты и помощи в овладении йогой.
                 Подумай о запредельном Абсолюте. После чего приступай к практике.
               </p>
-              <img src="./images/start.png" alt="" />
+              <img class="img-desc" src="./images/start.png" alt="" />
             </fieldset>
             <fieldset>
               <legend>asana performens time</legend>
               <label for="">
                 time asana
-                <input type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
               <label for="">
                 break
-                <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+                <input class="break-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
-              <button type="submit">add to practice</button>
+              <button class="btn-add" type="submit">add to practice</button>
               <!-- <button type="button" name="delete">delete</button> -->
             </fieldset>
           </form>
