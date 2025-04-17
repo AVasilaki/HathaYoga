@@ -2,7 +2,24 @@ button,
 input {
   cursor: pointer;
 }
+.time-input {
+  height: 34px;
+  background-color: #4caf50;
+  font-size: 28px;
+  margin-right: 12px;
+  border-radius: 8px;
+}
 
+.btn-add {
+  /* height: 34px; */
+  font-size: 18px;
+}
+
+.time-label {
+  display: inline-block;
+  font-size: 18px;
+  width: 84px;
+}
 .list-asanas {
   width: 700px;
   margin-left: auto;

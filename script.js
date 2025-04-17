@@ -20,7 +20,7 @@ const totalPracticeTimeTitle = document.querySelector(".js-time");
 const startBtn = document.querySelector(".js-start");
 // вікно з асанами під час практики
 const modalWindow = document.querySelector(".modal");
-//назва поточної асани підчас практики
+//назва поточної асани під час практики
 const currentAsanaName = document.querySelector(".js-modalTitle");
 // зображення поточної асани
 const currentAsanaImg = document.querySelector(".js-modalImg");
@@ -66,7 +66,7 @@ function handleSubmit(evt) {
 
   asanas.push(objAsana);
   asanas.push(rest);
-
+  console.log(asanas);
   numberOfAsanas += 1;
 
   added.style = "display:block";
@@ -82,8 +82,9 @@ function handleSubmit(evt) {
 }
 
 function deleteAsana(i) {
+  console.log(i, "i");
   const deletingAsana = asanas.find((el) => el.index === i);
-
+  console.log(deletingAsana, "deketing asana");
   const timeofAsana = deletingAsana.timeAsana;
   // console.log(timeofAsana);
   // const restTime = deletingAsana.asanaRest;
@@ -106,6 +107,7 @@ function murkup() {
   if (!asanas.length) {
     added.style = "display:none";
     totalPracticeTimeTitle.style = "display:none";
+    startBtn.style = "display:none";
   }
   const murkup = asanas
     .map((el) => {
@@ -132,6 +134,7 @@ function startTraining() {
   added.style = "display:none";
   totalPracticeTimeTitle.style = "display:none";
   const closeBtn = document.querySelector(".modalBtn");
+  closeBtn.addEventListener("click", closeModal);
   // console.log(closeBtn);
 
   if (index < asanas.length) {
@@ -165,10 +168,12 @@ function startTraining() {
       startTraining();
     }, timeMilisekund);
   }
-  closeBtn.addEventListener("click", closeModal);
+
   function closeModal() {
     modalWindow.style = "display:none";
     startBtn.style = "display:none";
+    asanas = [];
+    totalTime = 0;
     clearInterval(timerBack);
     clearTimeout(timerId);
     timer = null;
@@ -176,7 +181,7 @@ function startTraining() {
     title = "";
     audio.pause();
     // modal.innerHTML = "";
-    asanas = [];
+
     startTraining();
   }
   if (index === asanas.length) {

@@ -9,13 +9,13 @@
 
   <body>
     <!-- link youtoub video -->
-    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link</a>
+    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link to video</a>
 
     <!-- модалка для практики -->
     <div class="modal">
       <h3 class="js-modalTitle"></h3>
       <img class="js-modalImg" src="" alt="" width="300" />
-      <button type="button" class="modalBtn" onclick="closeModal()">close</button>
+      <button type="button" class="modalBtn" ">close</button>
 
       <!-- progress bar -->
       <div class="progress-container">
@@ -47,6 +47,7 @@
       <audio id="myAudio" src="./audio/rest.mp3"></audio>
 
       <ol class="js-asanas" id="exerciseList">
+        <!--1 початок практики -->
         <li>
           <form name="" id="start">
             <audio id="" name="startAudio" src="./audio/enter.mp3"></audio>
@@ -63,21 +64,23 @@
             <fieldset>
               <legend>asana performens time</legend>
               <label for="">
-                time asana
+                <span class="time-label">time asana, minutes:</span>
+                
                 <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
               <label for="">
-                break
-                <input class="break-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+                 <span class="time-label"> break, minutes:</span>
+               
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button class="btn-add" type="submit">add to practice</button>
-              <!-- <button type="button" name="delete">delete</button> -->
             </fieldset>
           </form>
         </li>
+        <!-- 2 "paschimottanasana-->
         <li>
           <form name="" id="paschimottanasana">
-            <audio id="myAudio" src="./audio/start.mp3"></audio>
+            <audio id="myAudio" src="./audio/poza_jivota.mp3"></audio>
             <fieldset>
               <legend>Description</legend>
               <h3>Поза для живота</h3>
@@ -100,10 +103,10 @@
                 <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button type="submit">add to practice</button>
-              <!-- <button type="button" name="delete">delete</button> -->
             </fieldset>
           </form>
         </li>
+        <!--3 bhujangasana" -->
         <li>
           <form name="" id="bhujangasana">
             <audio id="myAudio" src="./audio/start.mp3"></audio>
@@ -131,48 +134,44 @@
                 <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 4 yoga mudra -->
+        <li>
+          <form name="" id="start">
+            <audio id="" name="startAudio" src="./audio/enter.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend>Description</legend>
+              <h3 class="title-desc">Поза – символ йогина, отказавшегося от заблуждения</h3>
+              <p class="asana-desc">
+                Сядь на согнутые ноги. Выпрями спину, шею, голову. Захвати запястье одной руки ладонью другой за спиной.
+                С выдохом же наклонись вперед и коснись головой земли. Эта поза – символ йогина, отказавшегося от
+                заблуждения. Подобно воздуху, выдыхаемому при наклоне, йогин выдыхает из себя все беспокойства и
+                привязанности разума к иллюзорным вещам. Прочнейшая нить майи разрывается этим упражнением. Йогин
+                перестает быть легкой игрушкой в руках иллюзии. И если сила майи преодолевается, какую же сеть майи еще
+                необходимо преодолевать?! Рвется сеть ассоциаций, держащих йогина в плену неведения. Как рыба,
+                вырывающаяся из невода, йогин становится свободным. Ты можешь делать эту позу, сидя в позе лотоса. Если
+                посторонние пустые желания беспокоят тебя, практикуй эту позу с усердием.
+              </p>
+              <img class="img-desc" src="./images/yogaMudra.png" alt="" />
+            </fieldset>
+            <fieldset>
+              <legend>asana performens time</legend>
+              <label for="">
+                time asana
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label for="">
+                break
+                <input class="break-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
               <!-- <button type="button" name="delete">delete</button> -->
             </fieldset>
           </form>
         </li>
-        <!-- <li>
-          <form>
-            <h3>Поза кобры – бхуджангасана</h3>
-            <p name="">
-              Вот поза кобры – бхуджангасана. О славный ученик, положи свое тело на пол, на живот. Помести ладони рук
-              своих под плечи. Подними вверх глаза, затем постепенно поднимай голову, прогибай шею, затем прогибай
-              спину, помогая себе руками прогнуться сильнее. Так оставайся отдавшись ей (энергии). Затем, делай все в
-              обратном порядке, чтобы выйти из позы. Ясную ярость приносит эта асана в разум. Как у кобры, готовой к
-              нападению. Этим упражнением излечишь глаза и верхнюю часть позвоночника. Ясность сознания получишь, делая
-              эту асану. Пробудишь силы, дремлющие в крестце.
-            </p>
-            <img src="./images/kobra.png" />
-            <input type="checkbox" value="Поза кобры – бхуджангасана" name="2" />
-            <label for="">
-              time asana
-              <input type="number" name="time" id="" min="1" max="90" step="1" value="1" />
-            </label>
-            <label for="">
-              break
-              <input type="number" name="" id="" min="1" max="10" step="1" value="1" />
-            </label>
-            <button type="submit">add to practice</button>
-          </form>
-        </li> -->
-        <li>
-          <h3>Поза – символ йогина, отказавшегося от заблуждения</h3>
-          <p>
-            Сядь на согнутые ноги. Выпрями спину, шею, голову. Захвати запястье одной руки ладонью другой за спиной. С
-            выдохом же наклонись вперед и коснись головой земли. Эта поза – символ йогина, отказавшегося от заблуждения.
-            Подобно воздуху, выдыхаемому при наклоне, йогин выдыхает из себя все беспокойства и привязанности разума к
-            иллюзорным вещам. Прочнейшая нить майи разрывается этим упражнением. Йогин перестает быть легкой игрушкой в
-            руках иллюзии. И если сила майи преодолевается, какую же сеть майи еще необходимо преодолевать?! Рвется сеть
-            ассоциаций, держащих йогина в плену неведения. Как рыба, вырывающаяся из невода, йогин становится свободным.
-            Ты можешь делать эту позу, сидя в позе лотоса. Если посторонние пустые желания беспокоят тебя, практикуй эту
-            позу с усердием.
-          </p>
-          <img src="./images/yogaMudra.png" />
-        </li>
+        <!-- 5 naklon  -->
         <li>
           <h3>Наклон</h3>
           <p>
