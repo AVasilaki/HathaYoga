@@ -1,5 +1,5 @@
 :root {
-  --brand-color: #df9724;
+  --brand-color: #d8ab62;
   --btn-color: #24db2a;
 }
 
@@ -12,10 +12,10 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #d8cf7b;
+
   background-color: var(--brand-color);
   border-radius: 8px;
-  color: #f5eedc;
+  /* color: #f5eedc; */
 }
 .time-input {
   /* height: 34px; */
@@ -28,6 +28,18 @@ input {
   content: "hl;";
   font-size: large;
   color: red;
+}
+
+.fieldDescription {
+  display: flex;
+  background-color: var(--brand-color);
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.title-desc {
+  font-size: 34px;
 }
 .btn-add {
   /* height: 34px; */
