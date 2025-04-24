@@ -1,22 +1,48 @@
+:root {
+  --brand-color: #df9724;
+  --btn-color: #24db2a;
+}
+
 button,
 input {
   cursor: pointer;
 }
+
+.time-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #d8cf7b;
+  background-color: var(--brand-color);
+  border-radius: 8px;
+  color: #f5eedc;
+}
 .time-input {
-  height: 34px;
-  background-color: #4caf50;
+  /* height: 34px; */
+  background-color: var(--btn-color);
   font-size: 28px;
-  margin-right: 12px;
+  /* margin-right: 12px; */
   border-radius: 8px;
 }
-
+.time-input::before {
+  content: "hl;";
+  font-size: large;
+  color: red;
+}
 .btn-add {
   /* height: 34px; */
   font-size: 18px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 2px solid rgb(0, 255, 234);
+  background: var(--btn-color);
 }
 
+.legend {
+  font-size: 22px;
+}
 .time-label {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 18px;
   width: 84px;
 }

@@ -49,7 +49,7 @@
       <ol class="js-asanas" id="exerciseList">
         <!--1 початок практики -->
         <li>
-          <form name="" id="start">
+          <form name="startPractice" id="start">
             <audio id="" name="startAudio" src="./audio/enter.mp3"></audio>
             <fieldset class="fieldDescription">
               <legend>Description</legend>
@@ -61,15 +61,15 @@
               </p>
               <img class="img-desc" src="./images/start.png" alt="" />
             </fieldset>
-            <fieldset>
-              <legend>asana performens time</legend>
-              <label for="">
-                <span class="time-label">time asana, minutes:</span>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label for="" class="time-label">
+                time asana, minutes:
                 
                 <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
-              <label for="">
-                 <span class="time-label"> break, minutes:</span>
+              <label for="" class="time-label">
+                  break, minutes:
                
                 <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
