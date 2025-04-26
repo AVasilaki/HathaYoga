@@ -7,7 +7,14 @@ button,
 input {
   cursor: pointer;
 }
+body {
+  margin: 0px;
+  padding: 20px;
+}
 
+li {
+  margin-bottom: 50px;
+}
 .time-field {
   display: flex;
   align-items: center;

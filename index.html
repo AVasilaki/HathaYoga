@@ -81,9 +81,9 @@
         <li>
           <form name="" id="paschimottanasana">
             <audio id="myAudio" src="./audio/poza_jivota.mp3"></audio>
-            <fieldset>
-              <legend>Description</legend>
-              <h3>Поза для живота</h3>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза для живота</h3>
               <p>
                 Вот поза для живота. Ляг на землю, со вдохом забрось руки за голову. Затем с выдохом наклонись к ногам и
                 захвати лодыжки ног своих ладонями рук. Следи, чтобы ноги в коленях были прямыми. Так отдайся энергии
@@ -92,28 +92,28 @@
               </p>
               <img src="./images/posaDlyaJivota.png" alt="" />
             </fieldset>
-            <fieldset>
-              <legend>asana performens time</legend>
-              <label for="">
-                time asana
-                <input type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label for="" class="time-label">
+                 asana, minutes:
+                <input type="number" class="time-input" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
-              <label for="">
-                break
-                <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              <label for="" class="time-label">
+                break, minutes
+                <input type="number" class="time-input" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
-              <button type="submit">add to practice</button>
+              <button type="submit" class="btn-add">add to practice</button>
             </fieldset>
           </form>
         </li>
         <!--3 bhujangasana" -->
         <li>
           <form name="" id="bhujangasana">
-            <audio id="myAudio" src="./audio/start.mp3"></audio>
-            <fieldset>
-              <legend>Description</legend>
-              <h3>Поза кобры – бхуджангасана</h3>
-              <p>
+            <audio id="myAudio" src="./audio/Vot_poza_kobry___bkhudzhangas.mp3"></audio>
+            <fieldset class="fieldDescription" >
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза кобры – бхуджангасана</h3>
+              <p class="asana-desc">
                 Вот поза кобры – бхуджангасана. О славный ученик, положи свое тело на пол, на живот. Помести ладони рук
                 своих под плечи. Подними вверх глаза, затем постепенно поднимай голову, прогибай шею, затем прогибай
                 спину, помогая себе руками прогнуться сильнее. Так оставайся отдавшись ей (энергии). Затем, делай все в
@@ -121,28 +121,28 @@
                 нападению. Этим упражнением излечишь глаза и верхнюю часть позвоночника. Ясность сознания получишь,
                 делая эту асану. Пробудишь силы, дремлющие в крестце.
               </p>
-              <img src="./images/kobra.png" alt="" />
+              <img class="img-desc" src="./images/kobra.png" alt="" />
             </fieldset>
-            <fieldset>
-              <legend>asana performens time</legend>
-              <label for="">
-                time asana
-                <input type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
-              <label for="">
-                break
-                <input type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
-              </label>
-              <button type="submit">add to practice</button>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label >
+              <button class="btn-add" type="submit">add to practice</button>
             </fieldset>
           </form>
         </li>
         <!-- 4 yoga mudra -->
         <li>
-          <form name="" id="start">
+          <form name="" id="yogaMudra">
             <audio id="" name="startAudio" src="./audio/enter.mp3"></audio>
             <fieldset class="fieldDescription">
-              <legend>Description</legend>
+              <legend class="legend">Description</legend>
               <h3 class="title-desc">Поза – символ йогина, отказавшегося от заблуждения</h3>
               <p class="asana-desc">
                 Сядь на согнутые ноги. Выпрями спину, шею, голову. Захвати запястье одной руки ладонью другой за спиной.
@@ -156,15 +156,15 @@
               </p>
               <img class="img-desc" src="./images/yogaMudra.png" alt="" />
             </fieldset>
-            <fieldset>
-              <legend>asana performens time</legend>
-              <label for="">
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
                 time asana
                 <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
-              <label for="">
+              <label class="time-label" for="">
                 break
-                <input class="break-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button class="btn-add" type="submit">add to practice</button>
               <!-- <button type="button" name="delete">delete</button> -->
@@ -177,7 +177,7 @@
           <p>
             В свободном от мешающих предметов месте встань на обе ноги. Вдохни живительный воздух полной грудью, забрось
             при этом руки вверх. С выдохом наклонись вниз и захвати лодыжки ног. Ноги в коленях пусть будут прямыми. Так
-            оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от многого, этим проникнешь во
+            оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от внешнего, этим проникнешь во
             внутренне. Верхняя часть туловища излечивается от всех болезней.
           </p>
           <img src="./images/naklon.png" />
