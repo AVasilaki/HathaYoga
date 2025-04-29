@@ -15,36 +15,35 @@
     <div class="modal">
       <h3 class="js-modalTitle"></h3>
       <img class="js-modalImg" src="" alt="" width="300" />
-      <button type="button" class="modalBtn" ">close</button>
+      <button type="button" class="modalBtn">close</button>
 
       <!-- progress bar -->
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
     </div>
+    <!-- total time plus start btn wrapper -->
+    <div class="total-time-start">
+      <!-- total time -->
+      <h3 class="js-time">
+        <!-- <h3 class="totalTime"></h3> -->
+      </h3>
+      <!-- btn start -->
+      <button class="js-start" onclick="startTraining()">start practice</button>
+    </div>
+
+    <!-- спливаюче вікно для відображення доданих вправ -->
+    <div class="added"></div>
+
+    <!-- пікалка за десять секунд до завершення -->
+    <audio id="rest10cek" src="./audio/end.mp3"></audio>
+    <!-- а зараз відпочиваємо -->
+    <audio id="myAudio" src="./audio/rest.mp3"></audio>
 
     <!-- section asana list -->
     <section class="list-asanas">
       <h1 class="main-title">Hatha Yoga</h1>
       <h2 class="subtitle">All asanas</h2>
-
-      <!-- total time plus start btn wrapper -->
-      <div class="total-time-start">
-        <!-- total time -->
-        <h3 class="js-time">
-          <!-- <h3 class="totalTime"></h3> -->
-        </h3>
-        <!-- btn start -->
-        <button class="js-start" onclick="startTraining()">start</button>
-      </div>
-
-      <!-- спливаюче вікно для відображення доданих вправ -->
-      <div class="added"></div>
-
-      <!-- пікалка за десять секунд до завершення -->
-      <audio id="rest10cek" src="./audio/end.mp3"></audio>
-      <!-- а зараз відпочиваємо -->
-      <audio id="myAudio" src="./audio/rest.mp3"></audio>
 
       <ol class="js-asanas" id="exerciseList">
         <!--1 початок практики -->
@@ -65,12 +64,12 @@
               <legend class="legend">asana performens time</legend>
               <label for="" class="time-label">
                 asana, minutes:
-                
+
                 <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
               <label for="" class="time-label">
-                  break, minutes:
-               
+                break, minutes:
+
                 <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button class="btn-add" type="submit">add to practice</button>
@@ -95,7 +94,7 @@
             <fieldset class="time-field">
               <legend class="legend">asana performens time</legend>
               <label for="" class="time-label">
-                 asana, minutes:
+                asana, minutes:
                 <input type="number" class="time-input" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
               <label for="" class="time-label">
@@ -110,7 +109,7 @@
         <li>
           <form name="" id="bhujangasana">
             <audio id="myAudio" src="./audio/Vot_poza_kobry___bkhudzhangas.mp3"></audio>
-            <fieldset class="fieldDescription" >
+            <fieldset class="fieldDescription">
               <legend class="legend">Description</legend>
               <h3 class="title-desc">Поза кобры – бхуджангасана</h3>
               <p class="asana-desc">
@@ -132,7 +131,7 @@
               <label class="time-label" for="">
                 break minutes:
                 <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
-              </label >
+              </label>
               <button class="btn-add" type="submit">add to practice</button>
             </fieldset>
           </form>
@@ -159,11 +158,11 @@
             <fieldset class="time-field">
               <legend class="legend">asana performens time</legend>
               <label class="time-label" for="">
-                time asana
+                asana minutes:
                 <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
               </label>
               <label class="time-label" for="">
-                break
+                break minutes:
                 <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
               </label>
               <button class="btn-add" type="submit">add to practice</button>
@@ -173,15 +172,35 @@
         </li>
         <!-- 5 naklon  -->
         <li>
-          <h3>Наклон</h3>
-          <p>
-            В свободном от мешающих предметов месте встань на обе ноги. Вдохни живительный воздух полной грудью, забрось
-            при этом руки вверх. С выдохом наклонись вниз и захвати лодыжки ног. Ноги в коленях пусть будут прямыми. Так
-            оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от внешнего, этим проникнешь во
-            внутренне. Верхняя часть туловища излечивается от всех болезней.
-          </p>
-          <img src="./images/naklon.png" />
+          <form name="" id="">
+            <audio id="" name="uttanAsasana" src="./audio/uttanAsasana.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Наклон(Uttanasana)</h3>
+              <p class="asana-desc">
+                В свободном от мешающих предметов месте встань на обе ноги. Вдохни живительный воздух полной грудью,
+                забрось при этом руки вверх. С выдохом наклонись вниз и захвати лодыжки ног. Ноги в коленях пусть будут
+                прямыми. Так оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от внешнего, этим
+                проникнешь во внутренне. Верхняя часть туловища излечивается от всех болезней.
+              </p>
+              <img class="img-desc" src="./images/naklon.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+              <!-- <button type="button" name="delete">delete</button> -->
+            </fieldset>
+          </form>
         </li>
+
         <li>
           <h3>Поза лука</h3>
           <p>
