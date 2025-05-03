@@ -170,6 +170,7 @@ function startTraining() {
   }
 
   function closeModal() {
+    console.log(" close modal window");
     modalWindow.style = "display:none";
     startBtn.style = "display:none";
     asanas = [];
@@ -182,7 +183,7 @@ function startTraining() {
     audio.pause();
     // modal.innerHTML = "";
 
-    startTraining();
+    // startTraining();
   }
   if (index === asanas.length) {
     asanas = [];
