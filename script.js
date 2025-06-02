@@ -181,6 +181,7 @@ function startTraining() {
     img = "";
     title = "";
     audio.pause();
+    audio.currentTime = 0;
     // modal.innerHTML = "";
 
     // startTraining();
