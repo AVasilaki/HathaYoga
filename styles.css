@@ -121,7 +121,7 @@ li {
 }
 .modal {
   display: none;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   /* margin-right: ; */
   width: 80%;
   height: 80%;
@@ -130,6 +130,7 @@ li {
   /* background: -moz-linear-gradient(); */
   background-color: aqua;
   /* opacity: 0.4; */
+  overflow: auto;
 }
 .modalBtn {
   margin-left: 90%;
