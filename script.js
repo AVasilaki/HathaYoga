@@ -56,7 +56,7 @@ function handleSubmit(evt) {
     timeAsana,
     audio,
   };
-  console.log(objAsana);
+  // console.log(objAsana);
   const rest = {
     asanaName: "rest",
     asanaImg: "./images/Sriyantra.svg",
@@ -65,7 +65,10 @@ function handleSubmit(evt) {
   };
 
   asanas.push(objAsana);
-  asanas.push(rest);
+  if (asanaName !== "Шавасана" && asanaName !== "Вход в практику") {
+    asanas.push(rest);
+  }
+
   console.log(asanas);
   numberOfAsanas += 1;
 
