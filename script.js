@@ -195,16 +195,6 @@ function startTraining() {
     modalWindow.style = "display:none";
   }
 }
-// function closeModal() {
-//   modal.style = "display:none";
-//   start.style = "display:none";
-//   clearInterval(timerBack);
-//   timer = null;
-//   img = "";
-//   title = "";
-//   // modal.innerHTML = "";
-//   asanas = [];
-// }
 
 function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
