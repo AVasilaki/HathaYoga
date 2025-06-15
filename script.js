@@ -31,7 +31,8 @@ const startRestVoice = document.getElementById("myAudio");
 //пікалка за десять секунд до завершення
 const rest10cekBeep = document.querySelector("#rest10cek");
 // console.log(rest10cek);
-
+const scrollLinks = document.querySelector(".scroll-links");
+console.log(scrollLinks);
 list.addEventListener("submit", handleSubmit);
 
 // функція додавання вибраних асан у масив і відображення на сторінці
@@ -65,8 +66,10 @@ function handleSubmit(evt) {
   };
 
   asanas.push(objAsana);
+  totalTime += timeAsana;
   if (asanaName !== "Шавасана" && asanaName !== "Вход в практику") {
     asanas.push(rest);
+    totalTime += asanaRest;
   }
 
   console.log(asanas);
@@ -75,11 +78,6 @@ function handleSubmit(evt) {
   added.style = "display:block";
   totalPracticeTimeTitle.style = "display:block";
   startBtn.style = "display:block";
-
-  const timeOneAsana = timeAsana + asanaRest;
-  totalTime += timeOneAsana;
-  // practiceTime.textContent = ` total time ${totalTime}`;
-  // const totalPracticeTime = `<p class='totalTime'>total practice time ${totalTime}</p> `;
 
   murkup();
 }
@@ -195,7 +193,13 @@ function startTraining() {
     modalWindow.style = "display:none";
   }
 }
-
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollLinks.classList.add("visible");
+  } else {
+    scrollLinks.classList.remove("visible");
+  }
+});
 function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "uk-UA";
