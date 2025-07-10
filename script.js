@@ -1,5 +1,5 @@
 let asanas = [];
-// console.log("asanas", asanas);
+
 // total practice time загальний час практики з перервами
 let totalTime = 0;
 // кількість доданих вправ
@@ -9,6 +9,7 @@ let title;
 let img;
 let audio;
 let timerId;
+
 const body = document.querySelector("body");
 
 const list = document.querySelector("ol");
@@ -32,14 +33,12 @@ const startRestVoice = document.getElementById("myAudio");
 const rest10cekBeep = document.querySelector("#rest10cek");
 // console.log(rest10cek);
 const scrollLinks = document.querySelector(".scroll-links");
-console.log(scrollLinks);
+
 list.addEventListener("submit", handleSubmit);
 
 // функція додавання вибраних асан у масив і відображення на сторінці
 function handleSubmit(evt) {
   evt.preventDefault();
-  // asanas = [];
-
   const form = evt.target;
   const elements = form.elements;
   const audio = form.children[0];
@@ -57,7 +56,7 @@ function handleSubmit(evt) {
     timeAsana,
     audio,
   };
-  // console.log(objAsana);
+
   const rest = {
     asanaName: "rest",
     asanaImg: "./images/Sriyantra.svg",
@@ -72,7 +71,7 @@ function handleSubmit(evt) {
     totalTime += asanaRest;
   }
 
-  console.log(asanas);
+  // console.log(asanas);
   numberOfAsanas += 1;
 
   added.style = "display:block";
@@ -87,13 +86,8 @@ function deleteAsana(i) {
   const deletingAsana = asanas.find((el) => el.index === i);
   console.log(deletingAsana, "deketing asana");
   const timeofAsana = deletingAsana.timeAsana;
-  // console.log(timeofAsana);
-  // const restTime = deletingAsana.asanaRest;
-  // console.log(restTime);
-  // totalTimeAsana = timeofAsana + restTime;
 
   totalTime -= timeofAsana;
-  // const totalPracticeTime = `<p class='totalTime'>total practice time ${totalTime}</p> `;
 
   const n = asanas.findIndex((el) => el.index === i);
 
@@ -120,7 +114,7 @@ function murkup() {
       </div>`;
     })
     .join("");
-  // console.log(m);
+
   totalPracticeTimeTitle.textContent = ` total practice time: ${totalTime} minute`;
 
   added.insertAdjacentHTML("beforeend", murkup);
@@ -129,17 +123,14 @@ let index = 0;
 let timerBack = null;
 
 function startTraining() {
-  // document.getElementById("myAudio").play();
   modalWindow.style = "display:block";
   startBtn.style = "display;none";
   added.style = "display:none";
   totalPracticeTimeTitle.style = "display:none";
   const closeBtn = document.querySelector(".modalBtn");
   closeBtn.addEventListener("click", closeModal);
-  // console.log(closeBtn);
 
   if (index < asanas.length) {
-    // speak("Наступна вправа: " + title); // Озвучення вправи
     timer = asanas[index].timeAsana;
     let timeMilisekund = timer * 60000;
     let timeSekund = timeMilisekund / 1000;
@@ -163,7 +154,6 @@ function startTraining() {
     }, 1000);
 
     timerId = setTimeout(() => {
-      // console.log(asanas[index]);
       innerHTML = "";
       index += 1;
       startTraining();
@@ -183,10 +173,8 @@ function startTraining() {
     title = "";
     audio.pause();
     audio.currentTime = 0;
-    // modal.innerHTML = "";
-
-    // startTraining();
   }
+
   if (index === asanas.length) {
     asanas = [];
     index = 0;
@@ -200,8 +188,3 @@ window.addEventListener("scroll", () => {
     scrollLinks.classList.remove("visible");
   }
 });
-function speak(text) {
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "uk-UA";
-  speechSynthesis.speak(utterance);
-}
