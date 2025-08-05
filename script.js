@@ -82,7 +82,6 @@ function handleSubmit(evt) {
 }
 
 function deleteAsana(i) {
-  console.log(i, "i");
   const deletingAsana = asanas.find((el) => el.index === i);
   console.log(deletingAsana, "deketing asana");
   const timeofAsana = deletingAsana.timeAsana;
