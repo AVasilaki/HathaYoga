@@ -3,307 +3,1419 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hatha practice</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
+    <!-- link youtoub video -->
+    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link to video</a>
+
+    <!-- модалка для практики -->
+    <div class="modal">
+      <h3 class="js-modalTitle"></h3>
+      <img class="js-modalImg" src="" alt="" width="300" />
+
+      <!-- progress bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <button type="button" class="modalBtn">close</button>
+    </div>
+    <!-- total time plus start btn wrapper -->
+    <div class="total-time-start">
+      <!-- total time -->
+      <h3 class="js-time">
+        <!-- <h3 class="totalTime"></h3> -->
+      </h3>
+      <!-- btn start -->
+      <button class="js-start" onclick="startTraining()">start practice</button>
+    </div>
+
+    <!-- спливаюче вікно для відображення доданих вправ -->
+    <div class="added"></div>
+
+    <!-- пікалка за десять секунд до завершення -->
+    <audio id="rest10cek" src="./audio/ten-second-to-finish-asana.mp3"></audio>
+    <!-- а зараз відпочиваємо -->
+    <audio id="myAudio" src="./audio/rest.mp3"></audio>
+
+    <!-- section asana list -->
     <section class="list-asanas">
-      <h1>Hatha Yoga</h1>
-      <h2>All asanas</h2>
-      <ol>
+      <h1 class="main-title">Hatha Yoga</h1>
+      <h2 class="subtitle">All asanas</h2>
+
+      <!-- <a href="#bottom">в кінець</a> -->
+      <ol class="js-asanas" id="exerciseList">
+        <!--1 початок практики -->
         <li>
-          <h3>Поза для живота</h3>
-          <p>
-            Вот поза для живота. Ляг на землю, со вдохом забрось руки за голову. Затем с выдохом наклонись к ногам и
-            захвати лодыжки ног своих ладонями рук. Следи, чтобы ноги в коленях были прямыми. Так отдайся энергии внутри
-            тебя текущей. Потом дотронешься лбом коленей. Делая эту позу, устранишь все болезни внизу живота. Будет
-            радость в ногах.
-          </p>
-          <img src="./images/posaDlyaJivota.png" alt="" />
+          <form name="startPractice" id="start">
+            <audio id="" name="startAudio" src="./audio/audacity/start.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Вход в практику</h3>
+              <p class="asana-desc">
+                Перед началом практики сядь прямо, успокой свой разум и пожелай счастья всем живым существам во
+                Вселенной. Затем, подумай о всех учителях йоги и попроси у них защиты и помощи в овладении йогой.
+                Подумай о запредельном Абсолюте. После чего приступай к практике.
+              </p>
+              <img class="img-desc" src="./images/start.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label for="" class="time-label">
+                asana, minutes:
+
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label for="" class="time-label unvisible">
+                break, minutes:
+
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 2 "paschimottanasana-->
         <li>
-          <h3>Поза кобры – бхуджангасана</h3>
-          <p>
-            Вот поза кобры – бхуджангасана. О славный ученик, положи свое тело на пол, на живот. Помести ладони рук
-            своих под плечи. Подними вверх глаза, затем постепенно поднимай голову, прогибай шею, затем прогибай спину,
-            помогая себе руками прогнуться сильнее. Так оставайся отдавшись ей (энергии). Затем, делай все в обратном
-            порядке, чтобы выйти из позы. Ясную ярость приносит эта асана в разум. Как у кобры, готовой к нападению.
-            Этим упражнением излечишь глаза и верхнюю часть позвоночника. Ясность сознания получишь, делая эту асану.
-            Пробудишь силы, дремлющие в крестце.
-          </p>
-          <img src="./images/kobra.png" />
+          <form name="" id="paschimottanasana">
+            <audio id="myAudio" src="./audio/audacity/paschimot1.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза для живота</h3>
+              <p>
+                Вот поза для живота. Ляг на землю, со вдохом забрось руки за голову. Затем с выдохом наклонись к ногам и
+                захвати лодыжки ног своих ладонями рук. Следи, чтобы ноги в коленях были прямыми. Так отдайся энергии
+                внутри тебя текущей. Потом дотронешься лбом коленей. Делая эту позу, устранишь все болезни внизу живота.
+                Будет радость в ногах.
+              </p>
+              <img src="./images/posaDlyaJivota.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label for="" class="time-label">
+                asana, minutes:
+                <input type="number" class="time-input" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label for="" class="time-label">
+                break, minutes
+                <input type="number" class="time-input" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button type="submit" class="btn-add">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!--3 bhujangasana" -->
         <li>
-          <h3>Поза – символ йогина, отказавшегося от заблуждения</h3>
-          <p>
-            Сядь на согнутые ноги. Выпрями спину, шею, голову. Захвати запястье одной руки ладонью другой за спиной. С
-            выдохом же наклонись вперед и коснись головой земли. Эта поза – символ йогина, отказавшегося от заблуждения.
-            Подобно воздуху, выдыхаемому при наклоне, йогин выдыхает из себя все беспокойства и привязанности разума к
-            иллюзорным вещам. Прочнейшая нить майи разрывается этим упражнением. Йогин перестает быть легкой игрушкой в
-            руках иллюзии. И если сила майи преодолевается, какую же сеть майи еще необходимо преодолевать?! Рвется сеть
-            ассоциаций, держащих йогина в плену неведения. Как рыба, вырывающаяся из невода, йогин становится свободным.
-            Ты можешь делать эту позу, сидя в позе лотоса. Если посторонние пустые желания беспокоят тебя, практикуй эту
-            позу с усердием.
-          </p>
-          <img src="./images/yogaMudra.png" />
+          <form name="" id="bhujangasana">
+            <audio id="myAudio" src="./audio/audacity/cobra2.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза кобры – бхуджангасана</h3>
+              <p class="asana-desc">
+                Вот поза кобры – бхуджангасана. О славный ученик, положи свое тело на пол, на живот. Помести ладони рук
+                своих под плечи. Подними вверх глаза, затем постепенно поднимай голову, прогибай шею, затем прогибай
+                спину, помогая себе руками прогнуться сильнее. Так оставайся отдавшись ей (энергии). Затем, делай все в
+                обратном порядке, чтобы выйти из позы. Ясную ярость приносит эта асана в разум. Как у кобры, готовой к
+                нападению. Этим упражнением излечишь глаза и верхнюю часть позвоночника. Ясность сознания получишь,
+                делая эту асану. Пробудишь силы, дремлющие в крестце.
+              </p>
+              <img class="img-desc" src="./images/kobra.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 4 yoga mudra -->
         <li>
-          <h3>Наклон</h3>
-          <p>
-            В свободном от мешающих предметов месте встань на обе ноги. Вдохни живительный воздух полной грудью, забрось
-            при этом руки вверх. С выдохом наклонись вниз и захвати лодыжки ног. Ноги в коленях пусть будут прямыми. Так
-            оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от многого, этим проникнешь во
-            внутренне. Верхняя часть туловища излечивается от всех болезней.
-          </p>
-          <img src="./images/naklon.png" />
+          <form name="" id="yogaMudra">
+            <audio id="" name="startAudio" src="./audio/audacity/3yogaMudra.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза – символ йогина, отказавшегося от заблуждения</h3>
+              <p class="asana-desc">
+                Сядь на согнутые ноги. Выпрями спину, шею, голову. Захвати запястье одной руки ладонью другой за спиной.
+                С выдохом же наклонись вперед и коснись головой земли. Эта поза – символ йогина, отказавшегося от
+                заблуждения. Подобно воздуху, выдыхаемому при наклоне, йогин выдыхает из себя все беспокойства и
+                привязанности разума к иллюзорным вещам. Прочнейшая нить майи разрывается этим упражнением. Йогин
+                перестает быть легкой игрушкой в руках иллюзии. И если сила майи преодолевается, какую же сеть майи еще
+                необходимо преодолевать?! Рвется сеть ассоциаций, держащих йогина в плену неведения. Как рыба,
+                вырывающаяся из невода, йогин становится свободным. Ты можешь делать эту позу, сидя в позе лотоса. Если
+                посторонние пустые желания беспокоят тебя, практикуй эту позу с усердием.
+              </p>
+              <img class="img-desc" src="./images/yogaMudra.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+              <!-- <button type="button" name="delete">delete</button> -->
+            </fieldset>
+          </form>
         </li>
+        <!-- 5 naklon uttanasana -->
         <li>
-          <h3>Поза лука</h3>
-          <p>
-            Сейчас я расскажу тебе о позе лука. Положи свое тело на живот, согни ноги в коленях, захвати ладонями
-            лодыжки ног и так оставайся некоторое время. Дождись, пока пробудится энергия этой позы. Затем, о прекрасный
-            ученик, начни разгибать ноги в коленях и прогибаться в спине. Так ты примешь позу лука. Оставайся в ней
-            столько, сколько позволит тебе твое тело. Эта непревзойденная поза по разжиганию пупочного огня. Слабый
-            жизненный огонь лечится этой позой. Плечи и суставы рук излечиваются этой позой. Много негативной кармы
-            пережигается ею, как в топке.
-          </p>
-          <img src="./images/luk.png" />
+          <form name="" id="">
+            <audio id="" name="uttanAsasana" src="./audio/audacity/utanasana4.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Наклон(Uttanasana)</h3>
+              <p class="asana-desc">
+                В свободном от мешающих предметов месте встань на обе ноги. Вдохни живительный воздух полной грудью,
+                забрось при этом руки вверх. С выдохом наклонись вниз и захвати лодыжки ног. Ноги в коленях пусть будут
+                прямыми. Так оставайся долго. Этим излечишь многие болезни мозга, этим отрешишься от внешнего, этим
+                проникнешь во внутренне. Верхняя часть туловища излечивается от всех болезней.
+              </p>
+              <img class="img-desc" src="./images/naklon.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!--6 posa luka -->
         <li>
-          <h3>Поза кошки</h3>
-          <p>
-            Встань на оба колена и обе руки. Затем прогнись так, чтобы голова, руки, грудь были на земле. Как кошка,
-            которая пролезает под забором или подтягивается. Оставайся в этой позе долго, чтобы энергия с верхней части
-            таза стекла к голове. Следи, чтобы позвоночник был изящно согнут вниз. Расстройство живота и легких помогает
-            устранить эта поза. Станешь выносливым, разовьешь разум.
-          </p>
-          <img src="./images/koshka.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/luk5.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза лука</h3>
+              <p class="asana-desc">
+                Сейчас я расскажу тебе о позе лука. Положи свое тело на живот, согни ноги в коленях, захвати ладонями
+                лодыжки ног и так оставайся некоторое время. Дождись, пока пробудится энергия этой позы. Затем, о
+                прекрасный ученик, начни разгибать ноги в коленях и прогибаться в спине. Так ты примешь позу лука.
+                Оставайся в ней столько, сколько позволит тебе твое тело. Эта непревзойденная поза по разжиганию
+                пупочного огня. Слабый жизненный огонь лечится этой позой. Плечи и суставы рук излечиваются этой позой.
+                Много негативной кармы пережигается ею, как в топке.
+              </p>
+              <img class="img-desc" src="./images/luk.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 7 posa cat-->
         <li>
-          <h3>Поза скрутки</h3>
-          <p>
-            Сядь на ноги, согнутые в коленях. Выпрями спину, шею, голову. Затем перебрось левую ступню за правое колено.
-            Затем поверни спину, шею голову влево, помогая руками повернуться налево, как можно больше. Находись в этой
-            позе долго. Этим устранишь многие болезни позвоночника. Этой позой можешь поменять течение лунной энергии на
-            солнечную. Или солнечной энергии на лунную. В таком же порядке вернись в исходное положение и сделай
-            упражнение вправо. Делая эту асану поймешь двойственность мира, осознаешь единое за двойственным.
-          </p>
-          <img src="./images/skrutka.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/koshka6.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза кошки</h3>
+              <p class="asana-desc">
+                Встань на оба колена и обе руки. Затем прогнись так, чтобы голова, руки, грудь были на земле. Как кошка,
+                которая пролезает под забором или подтягивается. Оставайся в этой позе долго, чтобы энергия с верхней
+                части таза стекла к голове. Следи, чтобы позвоночник был изящно согнут вниз. Расстройство живота и
+                легких помогает устранить эта поза. Станешь выносливым, разовьешь разум.
+              </p>
+              <img class="img-desc" src="./images/koshka.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 8 skrutka -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/arthamatydrasana7.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза скрутки</h3>
+              <p class="asana-desc">
+                Сядь на ноги, согнутые в коленях. Выпрями спину, шею, голову. Затем перебрось левую ступню за правое
+                колено. Затем поверни спину, шею голову влево, помогая руками повернуться налево, как можно больше.
+                Находись в этой позе долго. Этим устранишь многие болезни позвоночника. Этой позой можешь поменять
+                течение лунной энергии на солнечную. Или солнечной энергии на лунную. В таком же порядке вернись в
+                исходное положение и сделай упражнение вправо. Делая эту асану поймешь двойственность мира, осознаешь
+                единое за двойственным.
+              </p>
+              <img class="img-desc" src="./images/skrutka.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
 
+        <!--9 Поза плуга – халасана -->
         <li>
-          <h3>Поза плуга – халасана</h3>
-          <p>
-            Положи свое прямое тело на спину. Сделай вдох, с выдохом забрось свои прямые ноги за голову. Коснись ими
-            земли за головой. Руки пусть свободно лежат на земле, либо помести их за голову. Эта поза известна, как поза
-            плуга – халасана. Она устраняет боли в пояснице, а также шее.
-          </p>
-          <img src="./images/plug.png" />
-        </li>
-        <li>
-          <h3>Гамукхасана – поза коровьей головы</h3>
-          <p>
-            Гамукхасана – поза коровьей головы. Сядь на пол на согнутые ноги в коленях. Перебрось одну ногу через
-            другую, выпрями спину. Забрось одну руку, согнутую в локте, за спину. И другую руку, также согнутую в локте,
-            забрось за спину. Затем, пусть ладони рук сомкнуться за спиной. Повторяй это упражнение в другую сторону.
-            Этой позой переключаются каналы с лунного на солнечный и с солнечного на лунный. Она применяется для
-            выполнения мудр и банкх.
-          </p>
-          <img src="./images/korova.png" />
-        </li>
-        <li>
-          <h3>Перевернутая поза – випаритакарани</h3>
-          <p>
-            Выслушай же описание перевернутой позы – випаритакарани. В прекрасном месте положи прямое тело на пол.
-            Подними ноги вверх, поддерживая низ туловища руками. Так оставайся долго. Этим упражнением реку времени
-            обратишь вспять. Будешь молодеть, все морщины расправятся. Этой асаной йоги меняют энергию и сознание
-            местами. Бесчисленные блага даруются этой позой. Но не переусердствуй. Продолжительность увеличивай
-            постепенно. Хорошо питайся и избегай дурных компаний. Йог, выполняющий эту позу, держит время в объятьях.
-            Если же ноги отведешь дальше от головы, чтобы они держались на руках – будешь господином половой энергии.
-            Только лишь тогда достигается брахмачарья, когда эта энергия под контролем
-          </p>
-          <img src="./images/viparita.png" />
-        </li>
-        <li>
-          <h3>Полукоролевская поза – артха сиршасана</h3>
-          <p>
-            Помести голову на пол, обхвати ее руками. Ноги при этом поставь на колени. Затем, выпрями ноги так, чтобы
-            опираться на ступни ног, голову и на руки, обхватывающие голову, чтобы тело было согнуто в пояснице. Так
-            оставайся и приобретешь острый разум, отличное зрение и знание тончайших энергий. По своему действию эта
-            асана сравнивается со стойкой на голове, поэтому она называется полукоролевская поза – артха сиршасана.
-            Ученик мой, если ты будешь наделен властью, если будешь вести жить раджи, которая требует постоянной
-            бдительности и которая требует сияние твоей личности, подобно сиянию Солнца, чтобы вызвать уважение
-            приближенных и страх недругов, выполняй эту королевскую позу.
-          </p>
-          <img src="./images/arthaSirhasana.png" />
-        </li>
-        <li>
-          <h3>Поза раджи – сишасана</h3>
-          <p>
-            Вот поза раджи – сишасана. Пусть раджа в прекрасном месте поместит свое тело на голову, чтобы опираться
-            только на голову и локти рук, а тело при этом было бы прямым. Если управляешь страной и испытываешь
-            недостаток времени – практикуй хотя бы эту позу.
-          </p>
-          <img src="./images/sirshasana.png" />
-        </li>
-        <li>
-          <h3>Сарвангасана – стойка на плечах</h3>
-          <p>
-            Сарвангасана – стойка на плечах. Ляг на землю на спину. Подними ноги и туловище вверх. Пусть они будут на
-            прямой линии вертикально. Подбородок при этом пусть упирается в грудь. Руки можешь держать вдоль тела,
-            можешь подпирать или туловище, можешь свободно положить их на землю. Эта поза подобна сиршасане (стойке на
-            голове). Если овладеешь этой асаной, будешь господином верхних центров своего тела.
-          </p>
-          <img src="./images/stoykaNaPlechax.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/plug8.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза плуга – халасана</h3>
+              <p class="asana-desc">
+                Положи свое прямое тело на спину. Сделай вдох, с выдохом забрось свои прямые ноги за голову. Коснись ими
+                земли за головой. Руки пусть свободно лежат на земле, либо помести их за голову. Эта поза известна, как
+                поза плуга – халасана. Она устраняет боли в пояснице, а также шее.
+              </p>
+              <img class="img-desc" src="./images/plug.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
 
+        <!--10 Гамукхасана – поза коровьей головы -->
         <li>
-          <h3>Уштрасана – поза верблюда</h3>
-          <p>
-            Уштрасана – поза верблюда. Стань на колени, прогнись в спине назад и упрись ладонями рук в пятки ног. Эта
-            поза позволяет побрести контроль над верхними дыхательными органами и дает выносливость.
-          </p>
-          <img src="./images/camel.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/ghomukasana9.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Гамукхасана – поза коровьей головы</h3>
+              <p class="asana-desc">
+                Гамукхасана – поза коровьей головы. Сядь на пол на согнутые ноги в коленях. Перебрось одну ногу через
+                другую, выпрями спину. Забрось одну руку, согнутую в локте, за спину. И другую руку, также согнутую в
+                локте, забрось за спину. Затем, пусть ладони рук сомкнуться за спиной. Повторяй это упражнение в другую
+                сторону. Этой позой переключаются каналы с лунного на солнечный и с солнечного на лунный. Она
+                применяется для выполнения мудр и банкх.
+              </p>
+              <img class="img-desc" src="./images/korova.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!--11 Перевернутая поза – випаритакарани -->
         <li>
-          <h3>Поза полуколеса</h3>
-          <p>
-            Положи свое прямое тело на землю. Пусть руки лежат вдоль тела. Согни ноги в коленях и поставь их на ступни.
-            Захвати руками лодыжки ног и прогни туловище вверх. Эта поза полуколеса, она дает те же блага, что и поза
-            колеса.
-          </p>
-          <img src="./images/polKolesa.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/viparytacarany10.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Перевернутая поза – випаритакарани</h3>
+              <p class="asana-desc">
+                Выслушай же описание перевернутой позы – випаритакарани. В прекрасном месте положи прямое тело на пол.
+                Подними ноги вверх, поддерживая низ туловища руками. Так оставайся долго. Этим упражнением реку времени
+                обратишь вспять. Будешь молодеть, все морщины расправятся. Этой асаной йоги меняют энергию и сознание
+                местами. Бесчисленные блага даруются этой позой. Но не переусердствуй. Продолжительность увеличивай
+                постепенно. Хорошо питайся и избегай дурных компаний. Йог, выполняющий эту позу, держит время в
+                объятьях. Если же ноги отведешь дальше от головы, чтобы они держались на руках – будешь господином
+                половой энергии. Только лишь тогда достигается брахмачарья, когда эта энергия под контролем
+              </p>
+              <img class="img-desc" src="./images/viparita.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 12 Полукоролевская поза – артха сиршасана -->
         <li>
-          <h3>Поза круга - чакраасана</h3>
-          <p>
-            Ляг на спину, согни ноги в коленях. Забрось руки за голову и поставь их на землю. Упирайся на ладони и
-            ступни ног. Прогни свое тело вверх. Затем, пускай ступни и ладони идут на встречу друг другу – так получишь
-            позу круга (чакраасану). Эта асана устраняет загрязнения в позвоночнике и увеличивает жизненные силы.
-          </p>
-          <img src="./images/koleso.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/arthasirhasana11.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Полукоролевская поза – артха сиршасана</h3>
+              <p class="asana-desc">
+                Помести голову на пол, обхвати ее руками. Ноги при этом поставь на колени. Затем, выпрями ноги так,
+                чтобы опираться на ступни ног, голову и на руки, обхватывающие голову, чтобы тело было согнуто в
+                пояснице. Так оставайся и приобретешь острый разум, отличное зрение и знание тончайших энергий. По
+                своему действию эта асана сравнивается со стойкой на голове, поэтому она называется полукоролевская поза
+                – артха сиршасана. Ученик мой, если ты будешь наделен властью, если будешь вести жить раджи, которая
+                требует постоянной бдительности и которая требует сияние твоей личности, подобно сиянию Солнца, чтобы
+                вызвать уважение приближенных и страх недругов, выполняй эту королевскую позу.
+              </p>
+              <img class="img-desc" src="./images/arthaSirhasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!--13 Поза раджи – сиршасана -->
         <li>
-          <h3>Поза отдыха героя</h3>
-          <p>
-            Сядь на землю между своих ступней, помогая руками, опусти свое туловище на землю. Забрось свои руки за
-            голову и так оставайся. Эта поза устраняет болезни в суставах, а также плечах. Она известна как поза отдыха
-            героя.
-          </p>
-          <img src="./images/heroRest.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/sirhasana12.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза раджи – сиршасана</h3>
+              <p class="asana-desc">
+                Вот поза раджи – сиршасана. Пусть раджа в прекрасном месте поместит свое тело на голову, чтобы опираться
+                только на голову и локти рук, а тело при этом было бы прямым. Если управляешь страной и испытываешь
+                недостаток времени – практикуй хотя бы эту позу.
+              </p>
+              <img class="img-desc" src="./images/sirshasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 14 Сарвангасана – стойка на плечах -->
         <li>
-          <h3>Поза палки</h3>
-          <p>
-            Поза палки. Положи свое прямое тело на прекрасную подстилку на живот. Расположи ладони рук под плечами.
-            Подними свое прямое тело на прямых руках, как если бы тело было прямое как палка. Делай эту позу и ты
-            мобилизуешь свое сознание. Если чувствуешь, что с трудом контролируешь себя, это позой не дашь гневу
-            вырваться наружу. Эта поза дает ясность сознанию. Все болезни рук она лечит.
-          </p>
-          <img src="./images/palka.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/sarvangasana13.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Сарвангасана – стойка на плечах</h3>
+              <p class="asana-desc">
+                Сарвангасана – стойка на плечах. Ляг на землю на спину. Подними ноги и туловище вверх. Пусть они будут
+                на прямой линии вертикально. Подбородок при этом пусть упирается в грудь. Руки можешь держать вдоль
+                тела, можешь подпирать или туловище, можешь свободно положить их на землю. Эта поза подобна сиршасане
+                (стойке на голове). Если овладеешь этой асаной, будешь господином верхних центров своего тела.
+              </p>
+              <img class="img-desc" src="./images/stoykaNaPlechax.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 14 Уштрасана – поза верблюда -->
         <li>
-          <h3>Поза собаки</h3>
-          <p>
-            Сделай все также, как в позе палки. А затем согнись в пояснице таким образом, чтобы ноги были прямыми. Руки,
-            голову, туловище выровняй в одну линию. Это поза собаки. Делай ее и получишь чистоту каналов в руках, ногах
-            и пояснице. Кровь вместе с праной омоет твои руки, туловище и голову. Этим обновишь кровь в ногах своих.
-            Выносливость обретается этой позой. Ею уравновесишь баланс крови и энергии в организме.
-          </p>
-          <img src="./images/sobaka.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/ushtrasana14.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Уштрасана – поза верблюда</h3>
+              <p class="asana-desc">
+                Уштрасана – поза верблюда. Стань на колени, прогнись в спине назад и упрись ладонями рук в пятки ног.
+                Эта поза позволяет побрести контроль над верхними дыхательными органами и дает выносливость.
+              </p>
+              <img class="img-desc" src="./images/camel.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!--15 Поза полуколеса  -->
         <li>
-          <h3>Скрученная стойка на руках</h3>
-          <p>
-            Обопрись на ладони рук и пальцы ног. Согни руки в локтях и помести локти рук поверх локтей так, чтобы колени
-            ног упирались в локти. Затем, сохраняя бдительность, оторвите пальцы ног от земли, опираясь только на ладони
-            рук. Эта поза известна как скрученная стойка на руках. Она развивает мышцы живота.
-          </p>
-          <img src="./images/frog.png" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/polkolesa15.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза полуколеса</h3>
+              <p class="asana-desc">
+                Положи свое прямое тело на землю. Пусть руки лежат вдоль тела. Согни ноги в коленях и поставь их на
+                ступни. Захвати руками лодыжки ног и прогни туловище вверх. Эта поза полуколеса, она дает те же блага,
+                что и поза колеса.
+              </p>
+              <img class="img-desc" src="./images/polKolesa.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 16 Поза круга - чакраасана-->
         <li>
-          <h3>Поза павлина – маюрасана</h3>
-          <p>
-            Стань на колени, наклонись вперед. Поставь руки на землю, чтобы ладони смотрели в сторону ног. Сведи оба
-            локтя вместе и упрись ими в область пупка. При этом голова должна упираться в землю. Выпрями ноги, оторви
-            голову от земли так, чтобы упор был на ладони и пальцы ног. Оставайся та, пока не потечет энергия. Затем,
-            подайся вперед и оторви пальцы ног, чтобы туловище и ноги были параллельны земле, а все туловище держалось
-            на ладонях. Эта поза называется поза павлина – маюрасана. Тот, кто практикует эту асану, имеет сильный
-            пищеварительный огонь, который переваривает все яды. Эта поза устраняет все болезни живота.
-          </p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/chakraasana.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза круга - чакраасана</h3>
+              <p class="asana-desc">
+                Ляг на спину, согни ноги в коленях. Забрось руки за голову и поставь их на землю. Упирайся на ладони и
+                ступни ног. Прогни свое тело вверх. Затем, пускай ступни и ладони идут на встречу друг другу – так
+                получишь позу круга (чакраасану). Эта асана устраняет загрязнения в позвоночнике и увеличивает жизненные
+                силы.
+              </p>
+              <img class="img-desc" src="./images/koleso.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 17 Поза отдыха героя -->
         <li>
-          <h3>Трехугольная поза</h3>
-          <p>
-            А теперь я изложу трехугольную позу. Стань прямо, раздвинь ноги на ширине плеч, спину, шею, голову держи на
-            одной линии. Со вдохом подними руки и держи их параллельно земли, чтобы они составляли прямую линию. С
-            выдохом же наклонись вправо и дотронься правой рукой левой или правой ступни. Пусть при этом взор твой будет
-            обращен на левую руку. Руки старайся держать на прямой линии. Затем сделай то же упражнение в другую
-            сторону. Эта асана позволит устранить боли в позвоночнике. Она также меняет солнечные и лунные токи.
-          </p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/herorest17.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза отдыха героя</h3>
+              <p class="asana-desc">
+                Сядь на землю между своих ступней, помогая руками, опусти свое туловище на землю. Забрось свои руки за
+                голову и так оставайся. Эта поза устраняет болезни в суставах, а также плечах. Она известна как поза
+                отдыха героя.
+              </p>
+              <img class="img-desc" src="./images/heroRest.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 18 Поза палки -->
         <li>
-          <h3>Поза саранчи</h3>
-          <p>
-            Ляг на землю, на живот. Расположи ладони рук под бедрами или соедини ладони рук в области паха. Опирайся на
-            руки и поднимай ноги как можно выше. Эта поза саранчи. Она дает силу в руках.
-          </p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/palka18.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза палки</h3>
+              <p class="asana-desc">
+                Поза палки. Положи свое прямое тело на прекрасную подстилку на живот. Расположи ладони рук под плечами.
+                Подними свое прямое тело на прямых руках, как если бы тело было прямое как палка. Делай эту позу и ты
+                мобилизуешь свое сознание. Если чувствуешь, что с трудом контролируешь себя, это позой не дашь гневу
+                вырваться наружу. Эта поза дает ясность сознанию. Все болезни рук она лечит.
+              </p>
+              <img class="img-desc" src="./images/palka.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+
+        <!-- 19 Поза собаки -->
         <li>
-          <h3>Поза дерева</h3>
-          <p>
-            Стань прямо на одну ногу. Другая нога, согнутая в колене, пусть упирается об нее. Подними руки над головой и
-            сомкни ладони вместе. Эта поза дает устойчивость разуму и нечувствительность к внешним воздействиям. Эта
-            прямая поза известна как поза дерева.
-          </p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/dog19.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза собаки</h3>
+              <p class="asana-desc">
+                Сделай все также, как в позе палки. А затем согнись в пояснице таким образом, чтобы ноги были прямыми.
+                Руки, голову, туловище выровняй в одну линию. Это поза собаки. Делай ее и получишь чистоту каналов в
+                руках, ногах и пояснице. Кровь вместе с праной омоет твои руки, туловище и голову. Этим обновишь кровь в
+                ногах своих. Выносливость обретается этой позой. Ею уравновесишь баланс крови и энергии в организме.
+              </p>
+              <img class="img-desc" src="./images/sobaka.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+
+        <!-- 20  Скрученная стойка на руках-->
         <li>
-          <h3>Поза полета</h3>
-          <p>
-            Стань на одну ногу, наклонись вперед. Подними другую ногу в продолжении тела. Расправь руки в разные
-            стороны, как лебедь расправляет крылья, садясь на воду. Сохраняй при этой равновесие. Эта поза дает ощущение
-            пространства и контролирует положение тела в нем. Эта поза полета.
-          </p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/frog20.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Скрученная стойка на руках</h3>
+              <p class="asana-desc">
+                Обопрись на ладони рук и пальцы ног. Согни руки в локтях и помести локти рук поверх локтей так, чтобы
+                колени ног упирались в локти. Затем, сохраняя бдительность, оторвите пальцы ног от земли, опираясь
+                только на ладони рук. Эта поза известна как скрученная стойка на руках. Она развивает мышцы живота.
+              </p>
+              <img class="img-desc" src="./images/frog.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+        <!-- 21  Поза павлина – маюрасана-->
+
         <li>
-          <h3></h3>
-          <p></p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/mayurasana.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза павлина – маюрасана</h3>
+              <p class="asana-desc">
+                Стань на колени, наклонись вперед. Поставь руки на землю, чтобы ладони смотрели в сторону ног. Сведи оба
+                локтя вместе и упрись ими в область пупка. При этом голова должна упираться в землю. Выпрями ноги,
+                оторви голову от земли так, чтобы упор был на ладони и пальцы ног. Оставайся та, пока не потечет
+                энергия. Затем, подайся вперед и оторви пальцы ног, чтобы туловище и ноги были параллельны земле, а все
+                туловище держалось на ладонях. Эта поза называется поза павлина – маюрасана. Тот, кто практикует эту
+                асану, имеет сильный пищеварительный огонь, который переваривает все яды. Эта поза устраняет все болезни
+                живота.
+              </p>
+              <img class="img-desc" src="./images/mayurasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+
+        <!-- 22 Трехугольная поза-->
         <li>
-          <h3></h3>
-          <p></p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/threeangle22.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Трехугольная поза</h3>
+              <p class="asana-desc">
+                А теперь я изложу трехугольную позу. Стань прямо, раздвинь ноги на ширине плеч, спину, шею, голову держи
+                на одной линии. Со вдохом подними руки и держи их параллельно земли, чтобы они составляли прямую линию.
+                С выдохом же наклонись вправо и дотронься правой рукой левой или правой ступни. Пусть при этом взор твой
+                будет обращен на левую руку. Руки старайся держать на прямой линии. Затем сделай то же упражнение в
+                другую сторону. Эта асана позволит устранить боли в позвоночнике. Она также меняет солнечные и лунные
+                токи.
+              </p>
+              <img class="img-desc" src="./images/threeangle.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
+
+        <!-- 23 Поза саранчи -->
+
         <li>
-          <h3></h3>
-          <p></p>
-          <img src="" />
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/sarancha23.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза саранчи</h3>
+              <p class="asana-desc">
+                Ляг на землю, на живот. Расположи ладони рук под бедрами или соедини ладони рук в области паха. Опирайся
+                на руки и поднимай ноги как можно выше. Эта поза саранчи. Она дает силу в руках.
+              </p>
+              <img class="img-desc" src="./images/sarancha.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <!-- 24 Поза дерева -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/tree.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза дерева</h3>
+              <p class="asana-desc">
+                Стань прямо на одну ногу. Другая нога, согнутая в колене, пусть упирается об нее. Подними руки над
+                головой и сомкни ладони вместе. Эта поза дает устойчивость разуму и нечувствительность к внешним
+                воздействиям. Эта прямая поза известна как поза дерева.
+              </p>
+              <img class="img-desc" src="./images/tree.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 25  Поза полета-->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/polet25.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза полета</h3>
+              <p class="asana-desc">
+                Стань на одну ногу, наклонись вперед. Подними другую ногу в продолжении тела. Расправь руки в разные
+                стороны, как лебедь расправляет крылья, садясь на воду. Сохраняй при этой равновесие. Эта поза дает
+                ощущение пространства и контролирует положение тела в нем. Эта поза полета.
+              </p>
+              <img class="img-desc" src="./images/polit.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 26 Наклон к одной ноге -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/nalonknoge26.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Наклон к одной ноге</h3>
+              <p class="asana-desc">
+                Сядь на землю с прямыми ногами. Согни колено и упри его во внутреннюю часть бедра другой ноги. Наклонись
+                вперед. Захвати ладонями прямую ногу.
+              </p>
+              <img class="img-desc" src="./images/naklon26.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 27 Поза растянутого бока -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/stretchSide27.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза растянутого бока</h3>
+              <p class="asana-desc">
+                Сядь на землю с прямыми ногами. Согните одну ногу в колене, другую ногу отведи в сторону. Наклони
+                туловище в одну сторону так, чтобы один бок был растянут, а другой сжат. Можешь захватить ступню прямой
+                ноги ладонью. Эта поза растянутого бока. Она дает гибкость и контроль над ребрами.
+              </p>
+              <img class="img-desc" src="./images/bock.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 28 Шпагат с наклоном -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/shpagat28.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Шпагат с наклоном</h3>
+              <p class="asana-desc">
+                Сядь на землю с прямыми ногами. Расставь прямые ноги как можно шире. Наклонись вперед и захвати ладонями
+                рук прямые ноги.
+              </p>
+              <img class="img-desc" src="./images/28.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 29 Палка наоборот -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/palka29.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Палка наоборот</h3>
+              <p class="asana-desc">
+                Сядь на землю с прямыми ногами. Упрись ладонями рук за спиной. Прогни свое тело вверх так, чтобы
+                упирался на ладони рук и ступни. Пусть колени будут прямыми. Так оставайся долго.
+              </p>
+              <img class="img-desc" src="./images/palkaBack.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 30 Поза воина (Вирабхадрасана) звук не оброблений-->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/vira30.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза воина (Вирабхадрасана)</h3>
+              <p class="asana-desc">
+                Встань так, чтобы одна нога была согнута в колене, а другая прямая. Подними руки над головой и соедини
+                ладони вместе.
+              </p>
+              <img class="img-desc" src="./images/hero.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 31 Поза равновесия  -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/ravnovesie31.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза равновесия</h3>
+              <p class="asana-desc">
+                Сядь на землю, затем приподними ровные ноги и захвати их руками. Так удерживай равновесие и оставайся
+                долго. Эта поза равновесия.
+              </p>
+              <img class="img-desc" src="./images/balance.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 32 Утканаасана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/utka32.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Уткатанасана</h3>
+              <p class="asana-desc">
+                Стань прямо, соедини руки надо головой. Согни ноги в коленях так, чтобы туловище и руки были на одной
+                прямой.
+              </p>
+              <img class="img-desc" src="./images/utka.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 33 Наклон 90 градусов -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/naklon33.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Наклон 90 градусов</h3>
+              <p class="asana-desc">
+                Стань прямо, сгибайся в пояснице так, чтобы ноги в коленях были прямыми, а вытянутые руки и туловище
+                были параллельны земле. Оставайся в этой позе долго.
+              </p>
+              <img class="img-desc" src="./images/ugol90.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 34 Поза двойного угла -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/twoAngle34.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза двойного угла</h3>
+              <p class="asana-desc">
+                Стань прямо, соедини руки за спиной. Сгибайся так, чтобы ноги в коленях и руки в локтях оставались
+                прямыми. Поднимай локти как можно выше. Эта поза двойного угла.
+              </p>
+              <img class="img-desc" src="./images/2angle.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 35 Поза танцующего Шивы -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/dansingShiva35.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза танцующего Шивы</h3>
+              <p class="asana-desc">
+                Стань прямо на одной ноге. Другую ногу согни назад в колене и захвати ее ладонью руки. Другую руку
+                подними вперед и вверх. Подними согнутую ногу как можно выше, помогая себе руками. Так оставайся долго.
+                Это поза танцующего Шивы.
+              </p>
+              <img class="img-desc" src="./images/danceShiva.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 36 Поза брахмачарья асана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/brahmachary36.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза брахмачарья асана</h3>
+              <p class="asana-desc">
+                Сядь с выпрямленными ногами на землю, чтобы туловище, шея, голова были на одной прямой. Обопрись руками
+                о землю и приподними свое тело, чтобы опирался только на ладони рук и пятки ног. Тот, кто выполняет эту
+                позу, обретает многие положительные качества других поз. Поэтому, следует ее практиковать с усердием.
+                Это поза брахмачарья асана.
+              </p>
+              <img class="img-desc" src="./images/braxmachari.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 37 Ваджрасана (поза алмаза) -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/vadjrasana37.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Ваджрасана (поза алмаза)</h3>
+              <p class="asana-desc">
+                В уединенном месте сядь на согнутые колени. Спина, шея, голова пусть будут на одной линии. Руки положи
+                на колени. Взор устреми пере собой. Этим упражнением приобретается прочность алмаза, поэтому и асана
+                называется поза алмаза.
+              </p>
+              <img class="img-desc" src="./images/almaz.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 38 Поза сукхасана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/sukhasana38.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза сукхасана</h3>
+              <p class="asana-desc">
+                Сидя на земле, помести левую или правую ступню соответственно на правое или левое бедро. Спину, шею,
+                голову держи прямо. Это поза сукхасана.
+              </p>
+              <img class="img-desc" src="./images/sukhasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 39 Поза лотоса – падмасана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/padmaasana39.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза лотоса – падмасана</h3>
+              <p class="asana-desc">
+                Сидя на земле, поместите левую ступню на правое бедро, а правую ступню на левое бедро. Либо помести
+                правую ступню на левое бедро, а левую ступню на правое бедро таким образом, чтобы ноги были сплетены.
+                Выпрями спину, шею, голову. Поза называется поза лотоса – падмасана. Это непревзойденная асана, идеальна
+                для пранаямы и медитации.
+              </p>
+              <img class="img-desc" src="./images/lotos.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 40 Поза бхадрасана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/bhadraasana40.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза бхадрасана</h3>
+              <p class="asana-desc">
+                Сядь на землю. Соедини ступни обеих ног и притяни их как можно ближе к туловищу. Это бхадрасана, дающая
+                многие совершенства и управляющая сексуальной энергией.
+              </p>
+              <img class="img-desc" src="./images/bhadrasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 41 Поза рыбы – матьясана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/matyaasana41.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза рыбы – матьясана</h3>
+              <p class="asana-desc">
+                Сядь в позу лотоса на землю. Затем ляг на спину, помести ладони обеих рук под голову – это поза рыбы –
+                матьясана. Тот, кто в совершенстве овладел этой асаной, чувствует себя как в воде. И может долго
+                перебывать в этой позе.
+              </p>
+              <img class="img-desc" src="./images/riba.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 42 Удиянабандха асана -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/udiyana42.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Удиянабандха асана</h3>
+              <p class="asana-desc">
+                Стань прямо, сделай глубокий выдох. Упрись ладонями в коленки полусогнутых ног. Втягивай стенки живота
+                на выдохе как можно выше.
+              </p>
+              <img class="img-desc" src="./images/udiyana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 43 Поза - сон Будды -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/sonBuddu43.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза - сон Будды</h3>
+              <p class="asana-desc">
+                Ляг на землю. Забрось согнутые ноги за голову так, чтобы голова оказалась между ног. Эта поза именуется
+                как сон Будды. Практикуя ее, йогин может мгновенно заснуть. Сон в этой позе приносит многие блага.
+              </p>
+              <img class="img-desc" src="./images/son.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 44 Поза победителя -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/victory44.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза победителя</h3>
+              <p class="asana-desc">
+                Ляг на спину, притяни ноги, согнутые в коленях. Пропусти руки между ног и захвати ступни ног ладонями
+                рук. Можешь переместить ступни и ладони как можно дальше за голову и коснуться ими земли. Это одна из
+                важнейших поз для обретения власти над сексуальной энергией. Тот, кто владеет этой позой, полностью
+                контролирует апану. Сон в той позе совершают многие сиддхи. Когда чувствуешь расстройство внутри тела от
+                переутомления – практикуй ее. Все болезни кишечника и внутренних органов излечиваются этой позой. Тот,
+                кто практикует ее излечивает болезни и обретает ясность сознания. Йогин, выполняющий эту позу
+                отключается от всех внешних воздействий. Это поза победителя.
+              </p>
+              <img class="img-desc" src="./images/pobeditel.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 45 Поза крокодила -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/crocodil45.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Поза крокодила</h3>
+              <p class="asana-desc">
+                Положи на живот свое прямое тело. Помести голову на ладони рук. Так пребывай в этой позе, позе
+                крокодила. Она дает отдых телу и разуму.
+              </p>
+              <img class="img-desc" src="./images/krokodil.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
+        <!-- 46  -->
+        <li>
+          <form name="" id="">
+            <audio id="" name="" src="./audio/audacity/shavasana46.mp3"></audio>
+            <fieldset class="fieldDescription">
+              <legend class="legend">Description</legend>
+              <h3 class="title-desc">Шавасана</h3>
+              <p class="asana-desc">
+                Следует завершать выполнение упражнений в йоге драгоценной позой – шавасаной. Как никакая другая, эта
+                поза дарует успех в йоге. Если знаете шавасану, вы знаете все позы. Не зная же ее, трудно достичь успеха
+                в йоге. Поэтому, слушай, о достойный ученик! Положи свое тело на пол. Распусти свои мышцы, свое лицо и
+                так, подобно трупу, находись в этой позе долго. Старайся не дышать, тогда не останется даже мысли. Эта
+                поза дает успокоение разума, восстанавливает энергию, перераспределяет ощущения. Как главный алмаз в
+                короне, шавасана – самая важная асана среди других поз. Считай, что ты умер. Затем плавно возвращайся в
+                жизнь. Начни с дыхания, потом осознания и лишь потом тела. Никогда резко не вскакивай. А если вскочил,
+                сделай успокаивающие упражнения. Практикуй эту позу всегда, пренебрегать ею безумие.
+              </p>
+              <img class="img-desc" src="./images/shavasana.png" alt="" />
+            </fieldset>
+            <fieldset class="time-field">
+              <legend class="legend">asana performens time</legend>
+              <label class="time-label" for="">
+                asana minutes:
+                <input class="time-input" type="number" name="time" id="" min="1" max="90" step="1" value="1" />
+              </label>
+              <label class="time-label unvisible" for="">
+                break minutes:
+                <input class="time-input" type="number" name="timeBreake" id="" min="1" max="10" step="1" value="1" />
+              </label>
+              <button class="btn-add" type="submit">add to practice</button>
+            </fieldset>
+          </form>
+        </li>
       </ol>
+      <div class="scroll-links">
+        <a href="#top">⬆️ На початок</a>
+        <a href="#bottom">⬇️ В кінець</a>
+      </div>
+      <div id="bottom"></div>
+      <!-- <a href="#top" id="bottom">на початок</a> -->
     </section>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -1,6 +1,182 @@
+:root {
+  --brand-color: #d8ab62;
+  --btn-color: #24db2a;
+}
+
+button,
+input {
+  cursor: pointer;
+}
+body {
+  margin: 0px;
+  padding: 20px;
+}
+
+li {
+  margin-bottom: 50px;
+}
+.time-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: var(--brand-color);
+  border-radius: 8px;
+  /* color: #f5eedc; */
+}
+.time-input {
+  /* height: 34px; */
+  background-color: var(--btn-color);
+  font-size: 28px;
+  /* margin-right: 12px; */
+  border-radius: 8px;
+}
+
+.fieldDescription {
+  display: flex;
+  background-color: var(--brand-color);
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.title-desc {
+  font-size: 34px;
+}
+.btn-add {
+  /* height: 34px; */
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 2px solid rgb(0, 255, 234);
+  background: var(--btn-color);
+}
+
+.legend {
+  font-size: 22px;
+}
+.time-label {
+  /* display: inline-block; */
+  font-size: 18px;
+  width: 84px;
+}
 .list-asanas {
   width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   background-color: azure;
+}
+.added {
+  display: none;
+  background-color: rgb(0, 255, 191);
+  position: fixed;
+  width: 150px;
+  height: 70%;
+  top: 14px;
+  right: 10px;
+  opacity: 50%;
+  padding: 10px;
+  overflow: auto;
+}
+.addAasanaContainer {
+  background-color: aliceblue;
+  padding: 2px;
+  margin-bottom: 4px;
+  text-align: center;
+  border-radius: 8px;
+}
+.total-time-start {
+  position: fixed;
+  right: 45px;
+  bottom: 18px;
+}
+
+/* .totalTime { */
+/* position: relative; */
+/* left: 100px; */
+/* bottom: 18px; */
+/* font-size: 14px; */
+/* } */
+.js-time {
+  display: none;
+  /* position: fixed; */
+  background-color: aqua;
+  /* top: 15px; */
+  /* right: 25px; */
+  width: 140px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 6px;
+}
+.js-start {
+  display: none;
+  /* position: fixed; */
+  /* right: 80px; */
+  /* bottom: 20px; */
+  /* padding-left: 4px; */
+  background-color: rgb(223, 54, 42);
+  color: #ddd;
+  font-size: 22px;
+  border-radius: 6px;
+}
+.modal {
+  display: none;
+  /* margin-left: 50px; */
+  /* margin-right: ; */
+  width: 80%;
+  height: 80%;
+  /* left: 700px; */
+  position: fixed;
+  /* background: -moz-linear-gradient(); */
+  background-color: aqua;
+  /* opacity: 0.4; */
+  overflow: auto;
+}
+.modalBtn {
+  margin-left: 90%;
+  margin-top: 10px;
+}
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: #4caf50;
+  transition: width 1s linear;
+}
+
+.scroll-links {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.scroll-links a {
+  padding: 10px 15px;
+  background-color: #009688;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.unvisible {
+  display: none;
 }
