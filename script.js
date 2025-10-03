@@ -33,6 +33,7 @@ const startRestVoice = document.getElementById("myAudio");
 const rest10cekBeep = document.querySelector("#rest10cek");
 // console.log(rest10cek);
 const scrollLinks = document.querySelector(".scroll-links");
+const countAsanas = document.querySelector(".js-numberOfAsanas");
 
 list.addEventListener("submit", handleSubmit);
 
@@ -76,6 +77,8 @@ function handleSubmit(evt) {
 
   added.style = "display:block";
   totalPracticeTimeTitle.style = "display:block";
+  countAsanas.style = "display:block";
+
   startBtn.style = "display:block";
 
   murkup();
@@ -83,7 +86,7 @@ function handleSubmit(evt) {
 
 function deleteAsana(i) {
   const deletingAsana = asanas.find((el) => el.index === i);
-  console.log(deletingAsana, "deketing asana");
+  // console.log(deletingAsana, "deketing asana");
   const timeofAsana = deletingAsana.timeAsana;
 
   totalTime -= timeofAsana;
@@ -91,8 +94,10 @@ function deleteAsana(i) {
   const n = asanas.findIndex((el) => el.index === i);
 
   asanas.splice(n, 1);
+  if (numberOfAsanas) {
+    numberOfAsanas -= 1;
+  }
 
-  numberOfAsanas -= 1;
   murkup();
 }
 
@@ -115,6 +120,7 @@ function murkup() {
     .join("");
 
   totalPracticeTimeTitle.textContent = ` total practice time: ${totalTime} minute`;
+  countAsanas.textContent = `added asanas: ${numberOfAsanas}`;
 
   added.insertAdjacentHTML("beforeend", murkup);
 }
@@ -126,6 +132,7 @@ function startTraining() {
   startBtn.style = "display;none";
   added.style = "display:none";
   totalPracticeTimeTitle.style = "display:none";
+  countAsanas.style = "display:none";
   const closeBtn = document.querySelector(".modalBtn");
   closeBtn.addEventListener("click", closeModal);
 
@@ -160,7 +167,7 @@ function startTraining() {
   }
 
   function closeModal() {
-    console.log(" close modal window");
+    // console.log(" close modal window");
     modalWindow.style = "display:none";
     startBtn.style = "display:none";
     asanas = [];

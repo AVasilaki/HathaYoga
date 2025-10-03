@@ -9,7 +9,7 @@
 
   <body>
     <!-- link youtoub video -->
-    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link to video</a>
+    <a href="https://youtu.be/j0lyt_VDQho?si=uq6w-kIr_gAhG4P2">link to the video</a>
 
     <!-- модалка для практики -->
     <div class="modal">
@@ -21,6 +21,7 @@
         <div class="progress-bar" id="progressBar"></div>
       </div>
       <button type="button" class="modalBtn">close</button>
+      <button type="button" class="modalBtn">pause</button>
     </div>
     <!-- total time plus start btn wrapper -->
     <div class="total-time-start">
@@ -28,6 +29,7 @@
       <h3 class="js-time">
         <!-- <h3 class="totalTime"></h3> -->
       </h3>
+      <h3 class="js-numberOfAsanas">added asanas</h3>
       <!-- btn start -->
       <button class="js-start" onclick="startTraining()">start practice</button>
     </div>
@@ -42,8 +44,12 @@
 
     <!-- section asana list -->
     <section class="list-asanas">
-      <h1 class="main-title">Hatha Yoga</h1>
-      <h2 class="subtitle">All asanas</h2>
+      <div class="container">
+        <div class="item">
+          <h1 class="main-title">Hatha Yoga</h1>
+          <h2 class="subtitle">All asanas</h2>
+        </div>
+      </div>
 
       <!-- <a href="#bottom">в кінець</a> -->
       <ol class="js-asanas" id="exerciseList">
