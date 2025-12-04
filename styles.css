@@ -92,18 +92,11 @@ li {
   bottom: 18px;
 }
 
-/* .totalTime { */
-/* position: relative; */
-/* left: 100px; */
-/* bottom: 18px; */
-/* font-size: 14px; */
-/* } */
 .js-time {
   display: none;
-  /* position: fixed; */
+
   background-color: aqua;
-  /* top: 15px; */
-  /* right: 25px; */
+
   width: 140px;
   text-align: center;
   padding: 4px;
@@ -119,10 +112,7 @@ li {
 }
 .js-start {
   display: none;
-  /* position: fixed; */
-  /* right: 80px; */
-  /* bottom: 20px; */
-  /* padding-left: 4px; */
+
   background-color: rgb(223, 54, 42);
   color: #ddd;
   font-size: 22px;
@@ -131,16 +121,12 @@ li {
 .modal {
   display: none;
   padding: 20px;
-  /* margin-left: 50px; */
-  /* margin-right: ; */
-  width: 80%;
-  height: 80%;
-  /* left: 700px; */
+  width: 90%;
+  height: 100%;
   position: fixed;
-  /* background: -moz-linear-gradient(); */
   background-color: aqua;
-  /* opacity: 0.4; */
   overflow: auto;
+  z-index: 2000;
 }
 .modalBtn {
   margin-left: 90%;
