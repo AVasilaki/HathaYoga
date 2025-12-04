@@ -135,6 +135,7 @@ function startTraining() {
   countAsanas.style = "display:none";
   const closeBtn = document.querySelector(".modalBtn");
   closeBtn.addEventListener("click", closeModal);
+  scrollLinks.classList.remove("visible");
 
   if (index < asanas.length) {
     timer = asanas[index].timeAsana;
